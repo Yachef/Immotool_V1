@@ -1,0 +1,19 @@
+.return{
+    text-align: right;
+    float:right;
+}
+.return>a{
+    text-decoration: none;
+}
+.return>a:hover{
+    cursor:pointer;
+}
+
+.return>a>h2{
+    margin-bottom: 0px;
+    margin-top: 25px;
+}
+
+.return>a>h2:hover{
+    color:grey;
+}

@@ -1,0 +1,9 @@
+#form label, #form input{
+    display: inline-block;
+}
+
+#form button{
+    margin:20px auto;
+    height: 50px;
+    font-size: 25px;
+}

@@ -1,0 +1,248 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    font-family: 'Varela Round', sans-serif;
+}
+
+body{
+    background-color: #EFEFF6;
+}
+h1{
+    font-family: 'Varela Round', sans-serif;
+    color:#3D405C;
+    font-size: 25px;
+}
+hr { 
+    display: block;
+    margin-top: 0.5em;
+    margin-bottom: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    border-style: inset;
+    border-width: 1px;
+    color: #E0E4EF;
+  }
+ul{
+    list-style-type: none;
+  }
+
+h2{
+    font-family: 'Varela Round', sans-serif;
+    color:#3D405C;
+    font-size: 20px;
+  }
+  
+label{
+      display:block;
+  }
+
+input{
+      display: block;
+  }
+
+
+/* HEADING */
+
+/* WHITE BAND */
+#white-band{
+    display: flex;
+    position: fixed;
+    /* right:0px; */
+    left : 201px;
+    height: 75px;
+    padding-left:0px;
+    background-color: white;
+    width:80%;
+    box-shadow: 0px 35px 28px -28px rgba(82, 63, 105, 0.13);
+}
+#main-menu-icon{
+    margin-right:auto;
+    margin-left: 0;
+    text-align: center;
+    font-size: 25px;
+    border-right: 1px solid gray;
+    display: flex;
+}
+#main-menu-icon>a{
+    margin: auto 30px;
+}
+#main-menu-icon:hover{
+    cursor: pointer;
+}
+#account{
+    /* float: right; */
+    margin-left: auto;
+    height: 100%;
+    display: table-cell;
+    text-align: center;
+}
+#img-account{
+    margin-top: 12.5px;
+}
+
+#account-layer{
+    background-color: white;
+    height: 75px;
+    width:150px;
+    margin-top: 12.5px;
+    display: none;
+    padding-top: 15px;
+    border-right: 1px solid gray;
+    border-left: 1px solid gray;
+    border-bottom: 1px solid gray;
+}
+
+#account-layer>a{
+    text-decoration: none;
+}
+#account-layer>a:hover{
+    cursor: pointer;
+}
+
+
+/* NAVIGATION BAR */
+#navigation-bar{
+    display: inline-block;
+    position: fixed;
+    background-color:#0E0C28;
+    height:100vh;
+    width: 200px;
+    border-right: 1px solid gray;
+}
+
+#logo{
+    height: 75px;
+    display: flex;
+    background-color:white;
+}
+#logo>a{
+    margin:auto;
+    text-decoration: none;
+}
+#logo>a>p{
+    color:#007BFF;
+    font-size: 30px;
+    text-transform: uppercase;
+    font-family: 'Varela Round', sans-serif;
+    font-weight: bold;
+    margin: 0;
+}
+#menu{
+    margin: 15px;
+}
+#menu>a{
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 12px;
+    color:#a4aadb;
+    text-transform: uppercase;
+    font-family: 'Varela Round', sans-serif;    
+}
+#navigation-bar>ul>li>a{
+    font-family: 'Varela Round', sans-serif;
+    font-weight: 400px;
+    color: rgb(185, 187, 204);
+    font-size: 16px;
+}
+
+.menu-icon{
+    color: #7A80B4;
+    font-size: 24px;
+    margin-right: 7px;
+}
+
+/* INSIDE CONTENT */
+#inside-content{
+    display: block;
+    top:100px;
+    margin-top: 80px;
+    margin-left: 100px;
+    padding-left: 50px;
+    padding-right: 50px;
+}
+
+#title,.icon-title{
+    display: inline-block;
+}
+
+#title{
+    margin-bottom: 0px;
+}
+.content-wrapper{
+    margin-bottom: 30px;
+    position:static;
+}
+
+.content-container{
+    /* display: inline-block; */
+    margin : 0 auto;
+    padding: 20px;
+    background-color: white;
+    border-radius: .5rem;
+}
+.content-title{
+    text-align: left;
+}
+.content-title>h1{
+    margin:0px;
+    font-weight: bold;
+}
+/* NEWS */
+#news{
+    width: 90%;
+}
+/* SUGGESTION FORM */
+.suggestion-form{
+    width: 90%;
+    text-align: center;
+}
+
+.btn{
+    display: block;
+    background-color: #1A164B;
+    /* font-family: 'Varela Round', sans-serif; */
+}
+.btn:hover{
+    background-color:#0E0C28;
+}
+input{
+    margin: 0 auto;
+}
+
+
+/* SIMULATEUR */
+#simulateur-description,#simulateur-img{
+    position: static;
+}
+#simulateur-description{
+    text-align: center;
+    border-right: 1px solid gray;
+}
+#simulateur-img{
+    line-height: 0;
+    text-align: center;
+    font-size: 150px;
+    color: #0E0C28;
+}
+
+/* MON AGENT */
+
+#mon-agent-description,#mon-agent-img{
+    position: static;
+}
+#mon-agent-description{
+    text-align: center;
+    border-left: 1px solid gray;
+}
+#mon-agent-img{
+    line-height: 0;
+    text-align: center;
+    font-size: 150px;
+    color: #0E0C28;
+}
+
+/* MES VISITES */
+#mes-visites>img{
+    width:80%;
+    height: auto;
+}

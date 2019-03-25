@@ -1,5 +1,6 @@
 <?php 
     require_once('../server/server.php');
+    require_once('../server/functions.php');
     if (isset($_GET['logout'])) {
         unset($_SESSION['connected']);
         session_destroy();
@@ -54,25 +55,117 @@
                        <div class = "divider"><hr></div>
                     </div>
 
-                    <section class = "col-md-4 content-wrapper">
+                    <section class = "col-md-3 content-wrapper">
                     </section>
 
 
-                    <section id = "rendement" class = "col-md-4 content-wrapper">
+                    <section id = "rendement" class = "col-md-6 content-wrapper">
                         <div class = "content-container">
                             <div class = "content-title"><h1>Rendement</h1></div>
-                            <div style = "text-align:center;">
-                                <h2>Rendement Brut</h2>
-                                <h2 style = "color:red; font-size:30px;"><?php echo round($_SESSION['rendementBrut']*100,2)."%" ?></h2>
-                                <h2>Rendement Net (avant imp&ocirc;ts)</h2>
-                                <h2 style = "color:green; font-size:30px;"><?php echo round($_SESSION['rendementNet']*100,2)."%" ?></h2>
+                            <div class = "centerize">
+                                <h2>Rendement Brut <span class ="firstYear">(1ère année)</span></h2>
+                                <h2 class ="number-result"><?php echo round($_SESSION['rendementBrut']*100,2)."%" ?></h2>
+                                <h2>Rendement Net (avant imp&ocirc;ts) <span class ="firstYear">(1ère année)</span></h2>
+                                <h2 class ="number-result"><?php echo round($_SESSION['rendementNet']*100,2)."%" ?></h2>
                             </div>
 
                         </div>
                     </section>
 
 
-                    <section class = "col-md-4 content-wrapper">
+                    <section class = "col-md-3 content-wrapper">
+                    </section>
+
+                    <section id = "location-vide" class = "col-md-6 content-wrapper">
+
+                        <div class = "centerize"><h1>Location Vide</h1></div>
+
+                        <div id = "regimeReel" class = "content-container">
+                            <div class = "content-title"><h1>Regime R&eacute;el</h1></div>
+                            <div class = "centerize">
+                                <h2>Cash Flow Net Net/mois <span class ="firstYear">(1ère année)</span></h2>
+                                <h2 class ="number-result"><?php echo round($_SESSION['cashflowR'],2)."€" ?></h2>
+                                <h2>Imp&ocirc;ts Fonciers <span class ="firstYear">(1ère année)</span></h2>
+                                <h2 class ="number-result"><?php echo round($_SESSION['impotsFoncierR'],2)."€" ?></h2>
+
+                            </div>
+                        </div>
+
+                        <div id = "regimeMicroFoncier" class = "content-container">
+                            <div class = "content-title"><h1>Regime Micro Foncier</h1></div>
+                            <div class = "centerize">
+                                <h2>Cash Flow Net Net/mois <span class ="firstYear">(1ère année)</span></h2>
+                                <h2 class ="number-result"><?php echo round($_SESSION['cashflowmF'],2)."€" ?></h2>
+                                <h2>Imp&ocirc;ts Fonciers <span class ="firstYear">(1ère année)</span></h2>
+                                <h2 class ="number-result"><?php echo round($_SESSION['impotsFonciermF'],2)."€" ?></h2>
+
+                            </div>
+                        </div>
+
+                    </section>
+
+                    <section id = "location-meublee" class = "col-md-6 content-wrapper">
+
+                        <div class = "centerize"><h1>Location Meubl&eacute;e</h1></div>
+
+                        <div id = "regimeReelSimplifie" class = "content-container">
+                            <div class = "content-title"><h1>Regime LMNP au r&eacute;el simplifi&eacute;</h1></div>
+                            <div class = "centerize">
+                                <h2>Cash Flow Net Net /mois <span class ="firstYear">(1ère année)</span></h2>
+                                <h2 class ="number-result"><?php echo round($_SESSION['cashflowBIC'],2)."€" ?></h2>
+                                <h2>Imp&ocirc;ts Fonciers <span class ="firstYear">(1ère année)</span></h2>
+                                <h2 class ="number-result"><?php echo round($_SESSION['impotsFoncierBIC'],2)."€" ?></h2>
+                            </div>
+                        </div>
+
+                        <div id = "regimeMicroBic" class = "content-container">
+                            <div class = "content-title"><h1>Regime LMNP Micro BIC</h1></div>
+                            <div class = "centerize">
+                                <h2>Cash Flow Net Net /mois <span class ="firstYear">(1ère année)</span></h2>
+                                <h2 class ="number-result"><?php echo round($_SESSION['cashflowLMNPm'],2)."€" ?></h2>
+                                <h2>Imp&ocirc;ts Fonciers <span class ="firstYear">(1ère année)</span></h2>
+                                <h2 class ="number-result"><?php echo round($_SESSION['impotsFoncierLMNPm'],2)."€" ?></h2>
+
+                            </div>
+                        </div>
+
+                    </section>
+
+                    <section id = "tableauRecapitulatif" class ="col-md-12 content-wrapper centerized">
+                        <div class ="content-container">
+                            <div class = "content-title"><h1>Tableau Récapitulatif</h1></div>
+                            <br>
+                            <table class = "blueTable">
+                                <thead>
+                                <tr>
+                                <th>Année\Régime</th>
+                                <th>R&eacute;el</th>
+                                <th>Micro Foncier</th>
+                                <th>LMNP r&eacute;el</th>
+                                <th>LMNP Micro Bic</th>
+
+                                </tr>
+                                </thead>
+                                <tbody>
+                                
+                                    <?php
+                                        $i =0;
+                                        while($i<30){
+                                            echo "<tr>";
+                                            echo "<td>".($i)."</td>";
+                                            echo "<td>".round($_SESSION['tabcashflowR'][$i],2)."€"."</td>";
+                                            echo "<td>".round($_SESSION['tabcashflowmF'][$i],2)."€"."</td>";
+                                            echo "<td>".round($_SESSION['tabcashflowBIC'][$i],2)."€"."</td>";
+                                            echo "<td>".round($_SESSION['tabcashflowLMNPm'][$i],2)."€"."</td>";
+                                            echo "</tr>";
+                                            $i++;
+                                        }
+                                    ?>
+
+                                </tbody>
+                                </tr>
+                                </table>
+                        </div>
                     </section>
 
                 </div>

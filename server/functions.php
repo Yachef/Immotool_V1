@@ -1,10 +1,11 @@
 <?php
+require_once('server.php');
+
 function console_log( $data ){
     echo '<script>';
     echo 'console.log('. json_encode( $data ) .')';
     echo '</script>';
   }
-require_once('server.php');
   
 function PMT($rate, $periods, $present, $future, $type) {
 
@@ -341,7 +342,7 @@ function recettesMoinsCharges($totalRecettesAnnuelles,$tabInteretEmprunt,$charge
 /* CASH FLOW SUR LES 30 ANS */
 function cashFlow($totalRecettesAnnuelles,$mensualitesTotales,$totalChargesAnnuelles,$tabimpotsFonciers){
   for($i = 0;$i<30;$i++){
-    $res = $totalRecettesAnnuelles/12 - $mensualitesTotales - $totalChargesAnnuelles/12 - $tabimpotsFonciers[$i]/12;
+    $res[$i] = $totalRecettesAnnuelles/12 - $mensualitesTotales - $totalChargesAnnuelles/12 - $tabimpotsFonciers[$i]/12;
   }
   return $res;
 }

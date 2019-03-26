@@ -73,4 +73,20 @@ table.blueTable {
   table.blueTable thead th:first-child {
     border-left: none;
   }
+
+#tableauRecapitulatif table {
+width: 100%;
+table-layout: fixed;
+
+}
+
+#tableauRecapitulatif th,
+#tableauRecapitulatif td {
+width: 100%;
+overflow: hidden;
+}
+
+.details{
+    color:#000066;
+}
   

@@ -346,4 +346,19 @@ function cashFlow($totalRecettesAnnuelles,$mensualitesTotales,$totalChargesAnnue
   }
   return $res;
 }
+
+function tabRendementNetNet($totalRecettesAnnuelles,$totalChargesAnnuelles,$totalCoutAchat,$tabimpotsFonciers){
+  for($i = 0; $i<sizeof($tabimpotsFonciers);$i++){
+    $res[$i] = ($totalRecettesAnnuelles - $totalChargesAnnuelles - $tabimpotsFonciers[$i])/$totalCoutAchat;
+  }
+  return $res;
+}
+
+function colorNumber($number){
+  if($number>=0){
+    return "green";
+  }else{
+    return "red";
+  }
+}
 ?>

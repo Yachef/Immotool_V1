@@ -10,7 +10,5 @@ $( document ).ready(function() {
         autoResizing();
       });
 
-      $('#img-account').click(toggleAccountBar);
-      
+    $('#img-account').click(toggleAccountBar);
 });
-

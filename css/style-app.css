@@ -171,6 +171,7 @@ input{
 #title{
     margin-bottom: 0px;
 }
+
 .content-wrapper{
     margin-bottom: 30px;
     position:static;
@@ -247,8 +248,13 @@ input{
     color: #0E0C28;
 }
 
+.agent-form input{
+    margin:0;
+}
+
 /* MES VISITES */
 #mes-visites>img{
     width:80%;
     height: auto;
 }
+

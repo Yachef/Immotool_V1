@@ -100,7 +100,6 @@ function CUMIPMT($rate, $periods, $value, $start, $end, $type) {
 };
 
 function saveData(){
-  console_log("saveData fait");
     $_SESSION['surface'] = $_POST['surface'];
     $_SESSION['prix'] = $_POST['prix'];
     $_SESSION['travaux'] = $_POST['travaux'];
@@ -124,12 +123,54 @@ function saveData(){
 
     $_SESSION['situationMaritale'] = $_POST['situationMaritale'];
     $_SESSION['personnesCharge'] = $_POST['personnesCharge'];
+    $_SESSION['ville'] = $_POST['ville'];
   
 };
-
 function resetData(){
-  $_SESSION['loyer'] = $_SESSION['surface'] = $_SESSION['prix'] = $_SESSION['travaux'] = $_SESSION['fraisDossiers'] = $_SESSION['mobilier'] = $_SESSION['apport'] = $_SESSION['taux'] = $_SESSION['dureeEmprunt'] = $_SESSION['assuranceCredit'] = $_SESSION['revenus'] = $_SESSION['vacances'] = $_SESSION['autresRecettes'] = $_SESSION['taxeFonciere'] = $_SESSION['reparations'] = $_SESSION['chargesCopro'] = "yo";
-};
+  $_SESSION['surface'] ="";
+  $_SESSION['prix'] = "";
+  $_SESSION['travaux'] = "";
+  $_SESSION['fraisDossiers'] = "";
+  $_SESSION['mobilier'] = "";
+
+  $_SESSION['apport'] = "";
+  $_SESSION['assuranceCredit'] = "";
+  $_SESSION['taux'] ="";
+  $_SESSION['dureeEmprunt'] = "";
+
+  $_SESSION['revenus'] ="";
+  // $_SESSION['partsFiscales'] = $_POST['partsFiscales'];
+  $_SESSION['loyer'] = "";
+  $_SESSION['vacances'] ="";
+  $_SESSION['autresRecettes']= "";
+
+  $_SESSION['taxeFonciere'] ="";
+  $_SESSION['reparations'] = "";
+  $_SESSION['chargesCopro'] = "";
+
+  $_SESSION['situationMaritale'] = "";
+  $_SESSION['personnesCharge'] = "";
+  $_SESSION['ville'] = "";
+  
+}
+function connectToDB(){
+  try{
+    $GLOBALS["db"] = mysqli_connect('localhost', 'yachef', 'yacleboss', 'calculermoncashflow',3306);
+  }
+  catch(Exception $e){
+    echo "Problème de connexion à la DB :".$e;
+  }
+}
+function storeToDB($username,$ville,$surface,$prix){
+  connectToDB();
+  $query = "INSERT INTO requests (username, ville, surface, prix) values ('$username', '$ville', '$surface','$prix')";
+  mysqli_query($GLOBALS['db'], $query);
+  mysqli_close($GLOBALS["db"]);
+}
+
+// function resetData(){
+//   $_SESSION['loyer'] = $_SESSION['surface'] = $_SESSION['prix'] = $_SESSION['travaux'] = $_SESSION['fraisDossiers'] = $_SESSION['mobilier'] = $_SESSION['apport'] = $_SESSION['taux'] = $_SESSION['dureeEmprunt'] = $_SESSION['assuranceCredit'] = $_SESSION['revenus'] = $_SESSION['vacances'] = $_SESSION['autresRecettes'] = $_SESSION['taxeFonciere'] = $_SESSION['reparations'] = $_SESSION['chargesCopro'] = "yo";
+// };
 
 
 /* CALCUL DE l'IMPOT NET */

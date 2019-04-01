@@ -56,3 +56,7 @@ function toggleAccountBar(){
      }
 }
 
+// function spacedZero(event){
+//     console.log("ahha")
+//     this.value.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1 ')
+// }

@@ -11,4 +11,11 @@ $( document ).ready(function() {
       });
 
     $('#img-account').click(toggleAccountBar);
+    // form_input = document.querySelectorAll('#form input');
+    // form_input.forEach(function(elem) {
+    //   elem.onchange = function(){
+    //     console.log("test")
+    //     this.value.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1 ')
+    //   };
+    // });
 });

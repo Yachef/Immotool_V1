@@ -1,12 +1,4 @@
-<?php 
-    require_once('../server/server.php');
-    if (isset($_GET['logout'])) {
-        unset($_SESSION['connected']);
-        session_destroy();
-        unset($_SESSION['username']);
-        header("location: index.php");
-    }
-?>
+<?php require_once('../../server/server.php');?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -29,11 +21,11 @@
     <link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet">
 
     <!-- CSS -->
-    <link rel="stylesheet" href="../css/style-app.css">
+    <link rel="stylesheet" href="../../css/style-app.css">
 
     <!-- JS -->
-    <script src = "../js/utils.js"></script>
-    <script src = "../js/script-app.js"></script>
+    <script src = "../../js/utils.js"></script>
+    <script src = "../../js/script-app.js"></script>
 </head>
 
 <body>
@@ -78,15 +70,15 @@
                         <div class="suggestion-form content-container">
                             <div class = "content-title"><h1>Donnez votre avis !</h1></div>                            
                             <h4>N'h&eacute;sitez pas &agrave; nous informer des bugs et am&eacute;liorations possibles ! Nous ferons tout pour y rem&eacute;dier !</h4>
-                            <form action="action_page.php">
+                            <form action="action_page.php" method="posts">
 
-                                    <label for="mail">Votre adresse mail (obligatoire)</label>
-                                    <input type="text" id="mail" name="firstname" placeholder="dupont@exemple.com">
+                                    <label for="object">Sujet</label>
+                                    <input required type="text" name="object">
                                 
                                     <label for="message">Votre message</label>
-                                    <textarea id="message" name="message" placeholder="Votre message.." style="width : 90%; height:100px"></textarea>
+                                    <textarea required id="message" name="message" placeholder="Votre message.." style="width : 90%; height:100px"></textarea>
 
-                                    <input  type="submit" value="Envoyer" class = "btn btn-primary">
+                                    <input  type="submit" value="Envoyer" class = "btn btn-primary" name = "suggestion">
                                 
                             </form>                            
                         </div>
@@ -132,7 +124,7 @@
                             <div id="mes-visites" class = "content-container" style = "text-align: center;">
                                 <div class = "content-title"><h1>Mes Visites</h1></div>
                                 <h4>A venir !</h4>
-                                <img class = "img-fluid" src="../docs/imgs/visite-appartement.jpg" alt="outil-visite-appartement">
+                                <img class = "img-fluid" src="../../docs/imgs/visite-appartement.jpg" alt="outil-visite-appartement">
                             </div> 
                         </div>
 

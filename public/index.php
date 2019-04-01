@@ -1,3 +1,12 @@
+<?php 
+    require_once('../server/server.php');
+    if (isset($_GET['logout'])) {
+        unset($_SESSION['connected']);
+        session_destroy();
+        unset($_SESSION['username']);
+        header("location: index.php");
+    }
+?>
 <!doctype html>
 <!--[if lt IE 7]> <html class="no-js ie6 oldie" lang="en"> <![endif]-->
 <!--[if IE 7]>    <html class="no-js ie7 oldie" lang="en"> <![endif]-->
@@ -20,7 +29,7 @@
   <link rel="stylesheet" href="../css/gumby.css">   			<!-- Gumby Framework /-->
   <link rel="stylesheet" href="../css/style.css">   			<!-- Main stylesheet /-->
   <link rel="stylesheet" href="../css/animate.css"> 			<!-- Animations /-->
-  <link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet">
+  <!-- <link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet"> -->
 
     
   
@@ -59,9 +68,9 @@
 				
 				 <ul id="nav" >
 				 
-					 <li><a href="register.php?login=1">S'inscrire</a></li>
+					 <li><a href="site/register.php?login=1">S'inscrire</a></li>
 					 					 
-					 <li><a href="register.php">Connexion</a></li>
+					 <li><a href="site/register.php">Connexion</a></li>
 
 					 
 				 </ul>
@@ -135,7 +144,7 @@
 
 					<div class="space"></div>
 					
-					<a  class="js-open-modal button-blue" href = "register.php?login=1">S'inscrire</a> 
+					<a  class="js-open-modal button-blue" href = "site/register.php?login=1">S'inscrire</a> 
 					
 				
 				</div>
@@ -185,7 +194,7 @@
 					
 					<div class="space"></div>
 					
-					<a class="js-open-modal button-green" href ="register.php?login=1">Commencer gratuitement !</a> 
+					<a class="js-open-modal button-green" href ="site/register.php?login=1">Commencer gratuitement !</a> 
 				
 				</div>
 				
@@ -287,44 +296,7 @@
 
 <!-- FOOTER SECTION ############################################### -->
 
-
-<section class="footer">
-
-		
-		    <div class="row">
-		    
-		    	<!-- Article centered on the Page --> 
-		
-				<div class="nine columns centered">
-				
-					<!-- Nav Footer --> 
-<!-- 				
-					<ul> 
-						<li><a href="http://www.iamsupview.be">About Supview</a> </li> 
-						<li> <a href="http://www.baribal.be/showpage/dl/">Get it</a> </li> 
-						<li> <a href="http://dribbble.com/Supview">Dribbble</a> </li> 
-						<li> <a href="http://www.facebook.com/Supview" rel="nofollow">Facebook</a> </li> 
-						<li> <a href="http://twitter.com/Supview" rel="nofollow">Twitter</a> </li> 
-						<li> <a href="http://www.behance.net/Supview" rel="nofollow">Behance</a> </li> 
-					</ul> -->
-
-					<!-- Title --> 
-																
-					<p class="copyright">© Copyright 2018 Immotool. All rights reserved.</p><br>	
-	
-					<!-- Logo  -->
-	
-	
-					<!-- <img class="logo" src="../docs/imgs/IMMOTOOL.png" alt="Logo"> -->
-					<p style = "font-family: 'Varela Round', sans-serif; color:white;">IMMOTOOL</p>
-	
-				</div>
-				
-		
-		    </div>
-			
-
-</section>
+<?php require("site/footer.php") ?>
 
 
 <!-- END FOOTER SECTION ############################################### -->
@@ -338,7 +310,7 @@
 
   <!-- Grab Google CDN's jQuery, fall back to local if offline -->
   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-  <script>window.jQuery || document.write('<script src="js/jquery-1.9.1.min.js"><\/script>')</script>
+  <script>window.jQuery || document.write('<script src="../js/jquery-1.9.1.min.js"><\/script>')</script>
   
   <script src="../js/main.js" type="text/javascript"></script> 								<!-- Main Javascript File -->
   <script src="../js/classie.js" type="text/javascript"></script> 								<!-- Scroll from left & right -->

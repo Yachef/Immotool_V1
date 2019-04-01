@@ -7,19 +7,9 @@ $email    = "";
 $errors = array();
 $prelevementsSociaux = 0.172;
 
-
-
-// CONNECT TO DATABASE
-try{
-    $db = mysqli_connect('localhost', 'yachef', 'yacleboss', 'calculermoncashflow',3306);
-    //   $db = mysql_connect('localhost:3306', 'yachef', 'yacleboss');
-}
-catch(Exception $e){
-  echo "Problème de connexion à la DB :".$e;
-}
-
 // REGISTER USER
 if (isset($_REQUEST['reg_user'])) { ///isset($_REQUEST['reg_user'])
+  connectToDB();
   // receive all input $values from the form
   $username = mysqli_real_escape_string($db, $_REQUEST['username']);
   $email = mysqli_real_escape_string($db, $_REQUEST['email']);
@@ -57,17 +47,19 @@ if (isset($_REQUEST['reg_user'])) { ///isset($_REQUEST['reg_user'])
     $password = md5($password_1);//encrypt the password before saving in the database
 
   	$query = "INSERT INTO users (username, email, password) values ('$username', '$email', '$password_1')";
-    mysqli_query($db, $query);
+    mysqli_query($GLOBALS['db'], $query);
   	$_SESSION['username'] = $username;
     $_SESSION['connected']="connected";
   	$_SESSION['success'] = "You are now logged in";
     $_SESSION['connected'] = "yes";
-  	header('location: app.php');
+  	header('location:../app/app.php');
   }
+  mysqli_close($GLOBALS["db"]);
 }
 
 // LOGIN USER
 if (isset($_REQUEST['login_user']) or isset($_REQUEST['login_user_via_popup'])) {
+  connectToDB();
   $username = mysqli_real_escape_string($db, $_REQUEST['username']);
   $password = mysqli_real_escape_string($db, $_REQUEST['password']);
 
@@ -85,9 +77,9 @@ if (isset($_REQUEST['login_user']) or isset($_REQUEST['login_user_via_popup'])) 
   	if (mysqli_num_rows($results) == 1) {
   	  $_SESSION['username'] = $username;
       $_SESSION['connected']="connected";
-  	  $_SESSION['success'] = "You are now logged in";
+      $_SESSION['success'] = "You are now logged in";
       if(isset($_REQUEST['login_user'])){
-        header('location: app.php');
+        header('location:../app/app.php');
       }else if(isset($_REQUEST['login_user_via_popup'])){
         header('location:result.php');
         $popup = false;
@@ -96,14 +88,58 @@ if (isset($_REQUEST['login_user']) or isset($_REQUEST['login_user_via_popup'])) 
   		array_push($errors, "Wrong username/password combination");
   	}
   }
+  mysqli_close($GLOBALS["db"]);
 }
 
-// Si le formulaire est bien rempli
+// MAIL SUGGESTION FORM
+if (isset($_REQUEST['suggestion']))  {
+  
+  //Email information
+  $admin_email = "yachef.h@gmail.com";
+  $user = $_SESSION['username'];
+  $subject = $_POST['objet'];
+  $message = $_POST['message'];
+  
+  //send email
+  mail($admin_email, $subject, $message, "From:" . $email);
+  
+  //Email response
+  echo "Thank you for contacting us!";
+  }
+
+
+// SI FORMULAIRE SIMULATION BIEN REMPLI
 if(isset($_REQUEST['simulation'])){
+  storeToDB($_SESSION['username'],$_POST['ville'],$_POST['surface'],$_POST['prix']);
   saveData();
   calcul();
   if(isset($_SESSION['connected'])){ // Bien
-    header('location:result-simulateur.php');
+    header('location: result-simulateur.php');
   }
 }
+
+if(isset($_REQUEST['deleteData'])){
+  resetData();
+}
+
+if(isset($_REQUEST['agent-form'])){
+  
+  //Email information
+  $admin_email = "yachef.h@gmail.com";
+  $name = $_POST['name'];
+  $prenom = $_POST['prenom'];
+  $tel = $_POST['tel'];
+  $ville = $_POST['ville-bien'];
+  $budget = $_POST['budget'];
+  $message = $_POST['description'];
+  
+  //send email
+  mail($admin_email, "Prenom : ".$prenom." Nom : ".$prenom, "Ville : ".$ville." Budget : ".$budget." Message : ".$message, "From :".$_SESSION['username']);
+  
+  //Email response
+  echo "Thank you for contacting us!";
+}
+
+
+ 
 ?>

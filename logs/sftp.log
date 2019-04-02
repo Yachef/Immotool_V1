@@ -1,0 +1,439 @@
+Apr  2 06:14:50 10.71.48.0 u96981454 Connection from 10.71.48.0 port 46684 on 82.165.85.130 port 22
+Apr  2 06:14:59 10.71.48.0 u96981454 Accepted password for u96981454 from 10.71.48.0 port 46684 ssh2
+Apr  2 06:15:00 10.71.48.0 u96981454 Starting session: subsystem 'sftp' for u96981454 from 10.71.48.0 port 46684
+Apr  2 06:15:00 10.71.48.0 u96981454 session opened for local user u96981454 from [10.71.48.0]
+Apr  2 06:35:16 10.71.48.0 u96981454 Connection from 10.71.48.0 port 22516 on 82.165.85.130 port 22
+Apr  2 06:35:17 10.71.48.0 u96981454 Accepted password for u96981454 from 10.71.48.0 port 22516 ssh2
+Apr  2 06:35:18 10.71.48.0 u96981454 Starting session: subsystem 'sftp' for u96981454 from 10.71.48.0 port 22516
+Apr  2 06:35:18 10.71.48.0 u96981454 session opened for local user u96981454 from [10.71.48.0]
+Apr  2 06:35:20 10.71.48.0 u96981454 open "/index.html" flags READ mode 0666
+Apr  2 06:35:21 10.71.48.0 u96981454 close "/index.html" bytes read 229 written 0
+Apr  2 06:35:21 10.71.48.0 u96981454 [10.71.48.0|get|1|229|0|0|0|2f696e6465782e68746d6c|]
+Apr  2 06:35:49 10.71.48.0 u96981454 open "/index.html" flags READ mode 0666
+Apr  2 06:35:49 10.71.48.0 u96981454 close "/index.html" bytes read 229 written 0
+Apr  2 06:35:49 10.71.48.0 u96981454 [10.71.48.0|get|0|229|0|0|0|2f696e6465782e68746d6c|]
+Apr  2 06:35:53 - u96981454 remove name "/index.html"
+Apr  2 06:35:53 - u96981454 [10.71.48.19|rm|0|0|0|0|0|2f696e6465782e68746d6c|]
+Apr  2 06:36:50 10.71.48.0 u96981454 session closed for local user u96981454 from [10.71.48.0]
+Apr  2 06:36:50 10.71.48.0 u96981454 Connection closed by 10.71.48.0
+Apr  2 06:38:31 10.71.48.0 u96981454 Connection from 10.71.48.0 port 57680 on 82.165.85.130 port 22
+Apr  2 06:38:33 10.71.48.0 u96981454 Accepted password for u96981454 from 10.71.48.0 port 57680 ssh2
+Apr  2 06:38:31 10.71.48.0 u96981454 Connection from 10.71.48.0 port 57720 on 82.165.85.130 port 22
+Apr  2 06:38:33 10.71.48.0 u96981454 Accepted password for u96981454 from 10.71.48.0 port 57720 ssh2
+Apr  2 06:38:33 10.71.48.0 u96981454 Starting session: subsystem 'sftp' for u96981454 from 10.71.48.0 port 57680
+Apr  2 06:38:33 10.71.48.0 u96981454 session opened for local user u96981454 from [10.71.48.0]
+Apr  2 06:38:33 10.71.48.0 u96981454 Starting session: subsystem 'sftp' for u96981454 from 10.71.48.0 port 57720
+Apr  2 06:38:33 10.71.48.0 u96981454 session opened for local user u96981454 from [10.71.48.0]
+Apr  2 06:38:34 10.71.48.0 u96981454 sent status No such file
+Apr  2 06:38:35 10.71.48.0 u96981454 sent status No such file
+Apr  2 06:38:35 10.71.48.0 u96981454 sent status No such file
+Apr  2 06:38:36 10.71.48.0 u96981454 open "/README.md" flags WRITE,CREATE,TRUNCATE mode 0666
+Apr  2 06:38:36 10.71.48.0 u96981454 sent status No such file
+Apr  2 06:38:36 10.71.48.0 u96981454 close "/README.md" bytes read 0 written 15
+Apr  2 06:38:36 10.71.48.0 u96981454 [10.71.48.0|put|0|15|0|0|0|2f524541444d452e6d64|]
+Apr  2 06:38:36 10.71.48.0 u96981454 mkdir name "/css" mode 0777
+Apr  2 06:38:36 10.71.48.0 u96981454 [10.71.48.0|mkdir|0|0|511|0|0|2f637373|]
+Apr  2 06:38:39 10.71.48.0 u96981454 sent status No such file
+Apr  2 06:38:39 10.71.48.0 u96981454 sent status No such file
+Apr  2 06:38:40 10.71.48.0 u96981454 open "/css/gumby.css" flags WRITE,CREATE,TRUNCATE mode 0666
+Apr  2 06:38:40 10.71.48.0 u96981454 open "/css/animate.css" flags WRITE,CREATE,TRUNCATE mode 0666
+Apr  2 06:38:40 10.71.48.0 u96981454 close "/css/gumby.css" bytes read 0 written 13954
+Apr  2 06:38:40 10.71.48.0 u96981454 [10.71.48.0|put|0|13954|0|0|0|2f6373732f67756d62792e637373|]
+Apr  2 06:38:41 10.71.48.0 u96981454 close "/css/animate.css" bytes read 0 written 48262
+Apr  2 06:38:41 10.71.48.0 u96981454 [10.71.48.0|put|1|48262|0|0|0|2f6373732f616e696d6174652e637373|]
+Apr  2 06:38:41 10.71.48.0 u96981454 sent status No such file
+Apr  2 06:38:41 10.71.48.0 u96981454 sent status No such file
+Apr  2 06:38:41 10.71.48.0 u96981454 open "/css/style-app.css" flags WRITE,CREATE,TRUNCATE mode 0666
+Apr  2 06:38:41 10.71.48.0 u96981454 open "/css/style-register.css" flags WRITE,CREATE,TRUNCATE mode 0666
+Apr  2 06:38:42 10.71.48.0 u96981454 close "/css/style-app.css" bytes read 0 written 4558
+Apr  2 06:38:42 10.71.48.0 u96981454 [10.71.48.0|put|1|4558|0|0|0|2f6373732f7374796c652d6170702e637373|]
+Apr  2 06:38:42 10.71.48.0 u96981454 close "/css/style-register.css" bytes read 0 written 3324
+Apr  2 06:38:42 10.71.48.0 u96981454 [10.71.48.0|put|1|3324|0|0|0|2f6373732f7374796c652d72656769737465722e637373|]
+Apr  2 06:38:42 10.71.48.0 u96981454 sent status No such file
+Apr  2 06:38:42 10.71.48.0 u96981454 sent status No such file
+Apr  2 06:38:43 10.71.48.0 u96981454 open "/css/style-results.css" flags WRITE,CREATE,TRUNCATE mode 0666
+Apr  2 06:38:43 10.71.48.0 u96981454 open "/css/style-simulateur.css" flags WRITE,CREATE,TRUNCATE mode 0666
+Apr  2 06:38:43 10.71.48.0 u96981454 close "/css/style-results.css" bytes read 0 written 1640
+Apr  2 06:38:43 10.71.48.0 u96981454 [10.71.48.0|put|0|1640|0|0|0|2f6373732f7374796c652d726573756c74732e637373|]
+Apr  2 06:38:43 10.71.48.0 u96981454 close "/css/style-simulateur.css" bytes read 0 written 1168
+Apr  2 06:38:43 10.71.48.0 u96981454 [10.71.48.0|put|0|1168|0|0|0|2f6373732f7374796c652d73696d756c61746575722e637373|]
+Apr  2 06:38:44 10.71.48.0 u96981454 sent status No such file
+Apr  2 06:38:44 10.71.48.0 u96981454 sent status No such file
+Apr  2 06:38:44 10.71.48.0 u96981454 open "/css/style.css" flags WRITE,CREATE,TRUNCATE mode 0666
+Apr  2 06:38:44 10.71.48.0 u96981454 sent status No such file
+Apr  2 06:38:45 10.71.48.0 u96981454 close "/css/style.css" bytes read 0 written 14234
+Apr  2 06:38:45 10.71.48.0 u96981454 [10.71.48.0|put|1|14234|0|0|0|2f6373732f7374796c652e637373|]
+Apr  2 06:38:45 10.71.48.0 u96981454 sent status No such file
+Apr  2 06:38:46 10.71.48.0 u96981454 mkdir name "/js" mode 0777
+Apr  2 06:38:46 10.71.48.0 u96981454 [10.71.48.0|mkdir|0|0|511|0|0|2f6a73|]
+Apr  2 06:38:49 10.71.48.0 u96981454 sent status No such file
+Apr  2 06:38:49 10.71.48.0 u96981454 sent status No such file
+Apr  2 06:38:49 10.71.48.0 u96981454 open "/js/jquery-1.9.1.min.js" flags WRITE,CREATE,TRUNCATE mode 0666
+Apr  2 06:38:49 10.71.48.0 u96981454 open "/js/classie.js" flags WRITE,CREATE,TRUNCATE mode 0666
+Apr  2 06:38:50 10.71.48.0 u96981454 close "/js/classie.js" bytes read 0 written 1835
+Apr  2 06:38:50 10.71.48.0 u96981454 [10.71.48.0|put|1|1835|0|0|0|2f6a732f636c61737369652e6a73|]
+Apr  2 06:38:50 10.71.48.0 u96981454 sent status No such file
+Apr  2 06:38:50 10.71.48.0 u96981454 close "/js/jquery-1.9.1.min.js" bytes read 0 written 93057
+Apr  2 06:38:50 10.71.48.0 u96981454 [10.71.48.0|put|1|93057|0|0|0|2f6a732f6a71756572792d312e392e312e6d696e2e6a73|]
+Apr  2 06:38:51 10.71.48.0 u96981454 sent status No such file
+Apr  2 06:38:51 10.71.48.0 u96981454 open "/js/jquery.scrollto.js" flags WRITE,CREATE,TRUNCATE mode 0666
+Apr  2 06:38:51 10.71.48.0 u96981454 open "/js/main.js" flags WRITE,CREATE,TRUNCATE mode 0666
+Apr  2 06:38:51 10.71.48.0 u96981454 close "/js/jquery.scrollto.js" bytes read 0 written 980
+Apr  2 06:38:51 10.71.48.0 u96981454 [10.71.48.0|put|0|980|0|0|0|2f6a732f6a71756572792e7363726f6c6c746f2e6a73|]
+Apr  2 06:38:52 10.71.48.0 u96981454 sent status No such file
+Apr  2 06:38:52 10.71.48.0 u96981454 close "/js/main.js" bytes read 0 written 5511
+Apr  2 06:38:52 10.71.48.0 u96981454 [10.71.48.0|put|1|5511|0|0|0|2f6a732f6d61696e2e6a73|]
+Apr  2 06:38:52 10.71.48.0 u96981454 sent status No such file
+Apr  2 06:38:52 10.71.48.0 u96981454 open "/js/mediaCheck.js" flags WRITE,CREATE,TRUNCATE mode 0666
+Apr  2 06:38:53 10.71.48.0 u96981454 open "/js/modernizr-2.6.2.min.js" flags WRITE,CREATE,TRUNCATE mode 0666
+Apr  2 06:38:53 10.71.48.0 u96981454 close "/js/mediaCheck.js" bytes read 0 written 3166
+Apr  2 06:38:53 10.71.48.0 u96981454 [10.71.48.0|put|1|3166|0|0|0|2f6a732f6d65646961436865636b2e6a73|]
+Apr  2 06:38:53 10.71.48.0 u96981454 sent status No such file
+Apr  2 06:38:53 10.71.48.0 u96981454 close "/js/modernizr-2.6.2.min.js" bytes read 0 written 16227
+Apr  2 06:38:53 10.71.48.0 u96981454 [10.71.48.0|put|0|16227|0|0|0|2f6a732f6d6f6465726e697a722d322e362e322e6d696e2e6a73|]
+Apr  2 06:38:54 10.71.48.0 u96981454 sent status No such file
+Apr  2 06:38:54 10.71.48.0 u96981454 open "/js/script-app.js" flags WRITE,CREATE,TRUNCATE mode 0666
+Apr  2 06:38:54 10.71.48.0 u96981454 open "/js/script-register.js" flags WRITE,CREATE,TRUNCATE mode 0666
+Apr  2 06:38:54 10.71.48.0 u96981454 close "/js/script-app.js" bytes read 0 written 635
+Apr  2 06:38:54 10.71.48.0 u96981454 [10.71.48.0|put|0|635|0|0|0|2f6a732f7363726970742d6170702e6a73|]
+Apr  2 06:38:55 10.71.48.0 u96981454 close "/js/script-register.js" bytes read 0 written 170
+Apr  2 06:38:55 10.71.48.0 u96981454 [10.71.48.0|put|1|170|0|0|0|2f6a732f7363726970742d72656769737465722e6a73|]
+Apr  2 06:38:55 10.71.48.0 u96981454 sent status No such file
+Apr  2 06:38:55 10.71.48.0 u96981454 sent status No such file
+Apr  2 06:38:55 10.71.48.0 u96981454 open "/js/utils.js" flags WRITE,CREATE,TRUNCATE mode 0666
+Apr  2 06:38:56 10.71.48.0 u96981454 open "/js/waypoints.min.js" flags WRITE,CREATE,TRUNCATE mode 0666
+Apr  2 06:38:56 10.71.48.0 u96981454 close "/js/utils.js" bytes read 0 written 2325
+Apr  2 06:38:56 10.71.48.0 u96981454 [10.71.48.0|put|1|2325|0|0|0|2f6a732f7574696c732e6a73|]
+Apr  2 06:38:56 10.71.48.0 u96981454 sent status No such file
+Apr  2 06:38:56 10.71.48.0 u96981454 close "/js/waypoints.min.js" bytes read 0 written 16857
+Apr  2 06:38:56 10.71.48.0 u96981454 [10.71.48.0|put|0|16857|0|0|0|2f6a732f776179706f696e74732e6d696e2e6a73|]
+Apr  2 06:38:57 10.71.48.0 u96981454 sent status No such file
+Apr  2 06:38:57 10.71.48.0 u96981454 sent status No such file
+Apr  2 06:38:57 10.71.48.0 u96981454 sent status No such file
+Apr  2 06:38:58 10.71.48.0 u96981454 sent status No such file
+Apr  2 06:38:58 10.71.48.0 u96981454 sent status No such file
+Apr  2 06:38:59 10.71.48.0 u96981454 mkdir name "/public" mode 0777
+Apr  2 06:38:59 10.71.48.0 u96981454 [10.71.48.0|mkdir|0|0|511|0|0|2f7075626c6963|]
+Apr  2 06:38:59 10.71.48.0 u96981454 mkdir name "/server" mode 0777
+Apr  2 06:38:59 10.71.48.0 u96981454 [10.71.48.0|mkdir|0|0|511|0|0|2f736572766572|]
+Apr  2 06:44:06 10.71.48.0 u96981454 session closed for local user u96981454 from [10.71.48.0]
+Apr  2 06:44:34 10.71.48.0 u96981454 Connection from 10.71.48.0 port 50348 on 82.165.85.130 port 22
+Apr  2 06:44:35 10.71.48.0 u96981454 Accepted password for u96981454 from 10.71.48.0 port 50348 ssh2
+Apr  2 06:44:36 10.71.48.0 u96981454 Starting session: subsystem 'sftp' for u96981454 from 10.71.48.0 port 50348
+Apr  2 06:44:36 10.71.48.0 u96981454 session opened for local user u96981454 from [10.71.48.0]
+Apr  2 06:44:47 10.71.48.0 u96981454 remove name "/README.md"
+Apr  2 06:44:47 10.71.48.0 u96981454 [10.71.48.0|rm|0|0|0|0|0|2f524541444d452e6d64|]
+Apr  2 06:44:50 10.71.48.0 u96981454 remove name "/css/style.css"
+Apr  2 06:44:50 10.71.48.0 u96981454 [10.71.48.0|rm|0|0|0|0|0|2f6373732f7374796c652e637373|]
+Apr  2 06:44:50 10.71.48.0 u96981454 remove name "/css/style-simulateur.css"
+Apr  2 06:44:50 10.71.48.0 u96981454 [10.71.48.0|rm|0|0|0|0|0|2f6373732f7374796c652d73696d756c61746575722e637373|]
+Apr  2 06:44:51 10.71.48.0 u96981454 remove name "/css/style-results.css"
+Apr  2 06:44:51 10.71.48.0 u96981454 [10.71.48.0|rm|0|0|0|0|0|2f6373732f7374796c652d726573756c74732e637373|]
+Apr  2 06:44:52 10.71.48.0 u96981454 remove name "/css/style-register.css"
+Apr  2 06:44:52 10.71.48.0 u96981454 [10.71.48.0|rm|0|0|0|0|0|2f6373732f7374796c652d72656769737465722e637373|]
+Apr  2 06:44:52 10.71.48.0 u96981454 remove name "/css/style-app.css"
+Apr  2 06:44:52 10.71.48.0 u96981454 [10.71.48.0|rm|0|0|0|0|0|2f6373732f7374796c652d6170702e637373|]
+Apr  2 06:44:53 10.71.48.0 u96981454 remove name "/css/animate.css"
+Apr  2 06:44:53 10.71.48.0 u96981454 [10.71.48.0|rm|0|0|0|0|0|2f6373732f616e696d6174652e637373|]
+Apr  2 06:44:53 10.71.48.0 u96981454 remove name "/css/gumby.css"
+Apr  2 06:44:53 10.71.48.0 u96981454 [10.71.48.0|rm|0|0|0|0|0|2f6373732f67756d62792e637373|]
+Apr  2 06:44:54 10.71.48.0 u96981454 rmdir name "/css"
+Apr  2 06:44:54 10.71.48.0 u96981454 [10.71.48.0|rmdir|0|0|0|0|0|2f637373|]
+Apr  2 06:44:58 10.71.48.0 u96981454 remove name "/js/waypoints.min.js"
+Apr  2 06:44:58 10.71.48.0 u96981454 [10.71.48.0|rm|0|0|0|0|0|2f6a732f776179706f696e74732e6d696e2e6a73|]
+Apr  2 06:44:58 10.71.48.0 u96981454 remove name "/js/utils.js"
+Apr  2 06:44:58 10.71.48.0 u96981454 [10.71.48.0|rm|0|0|0|0|0|2f6a732f7574696c732e6a73|]
+Apr  2 06:44:59 10.71.48.0 u96981454 remove name "/js/script-register.js"
+Apr  2 06:44:59 10.71.48.0 u96981454 [10.71.48.0|rm|0|0|0|0|0|2f6a732f7363726970742d72656769737465722e6a73|]
+Apr  2 06:44:59 10.71.48.0 u96981454 remove name "/js/script-app.js"
+Apr  2 06:44:59 10.71.48.0 u96981454 [10.71.48.0|rm|0|0|0|0|0|2f6a732f7363726970742d6170702e6a73|]
+Apr  2 06:45:00 10.71.48.0 u96981454 remove name "/js/modernizr-2.6.2.min.js"
+Apr  2 06:45:00 10.71.48.0 u96981454 [10.71.48.0|rm|0|0|0|0|0|2f6a732f6d6f6465726e697a722d322e362e322e6d696e2e6a73|]
+Apr  2 06:45:00 10.71.48.0 u96981454 remove name "/js/mediaCheck.js"
+Apr  2 06:45:00 10.71.48.0 u96981454 [10.71.48.0|rm|0|0|0|0|0|2f6a732f6d65646961436865636b2e6a73|]
+Apr  2 06:45:01 10.71.48.0 u96981454 remove name "/js/main.js"
+Apr  2 06:45:01 10.71.48.0 u96981454 [10.71.48.0|rm|0|0|0|0|0|2f6a732f6d61696e2e6a73|]
+Apr  2 06:45:02 10.71.48.0 u96981454 remove name "/js/jquery.scrollto.js"
+Apr  2 06:45:02 10.71.48.0 u96981454 [10.71.48.0|rm|0|0|0|0|0|2f6a732f6a71756572792e7363726f6c6c746f2e6a73|]
+Apr  2 06:45:02 10.71.48.0 u96981454 remove name "/js/classie.js"
+Apr  2 06:45:02 10.71.48.0 u96981454 [10.71.48.0|rm|0|0|0|0|0|2f6a732f636c61737369652e6a73|]
+Apr  2 06:45:03 10.71.48.0 u96981454 remove name "/js/jquery-1.9.1.min.js"
+Apr  2 06:45:03 10.71.48.0 u96981454 [10.71.48.0|rm|0|0|0|0|0|2f6a732f6a71756572792d312e392e312e6d696e2e6a73|]
+Apr  2 06:45:03 10.71.48.0 u96981454 rmdir name "/js"
+Apr  2 06:45:03 10.71.48.0 u96981454 [10.71.48.0|rmdir|0|0|0|0|0|2f6a73|]
+Apr  2 06:45:07 10.71.48.0 u96981454 rmdir name "/public"
+Apr  2 06:45:07 10.71.48.0 u96981454 [10.71.48.0|rmdir|0|0|0|0|0|2f7075626c6963|]
+Apr  2 06:45:11 10.71.48.0 u96981454 rmdir name "/server"
+Apr  2 06:45:11 10.71.48.0 u96981454 [10.71.48.0|rmdir|0|0|0|0|0|2f736572766572|]
+Apr  2 06:45:12 10.71.48.0 u96981454 Connection closed by 10.71.48.0
+Apr  2 06:45:12 10.71.48.0 u96981454 session closed for local user u96981454 from [10.71.48.0]
+Apr  2 06:45:14 10.71.48.0 u96981454 Connection closed by 10.71.48.0
+Apr  2 06:45:14 10.71.48.0 u96981454 session closed for local user u96981454 from [10.71.48.0]
+Apr  2 06:45:19 10.71.48.0 u96981454 Connection from 10.71.48.0 port 26528 on 82.165.85.130 port 22
+Apr  2 06:45:21 10.71.48.0 u96981454 Accepted password for u96981454 from 10.71.48.0 port 26528 ssh2
+Apr  2 06:45:19 10.71.48.0 u96981454 Connection from 10.71.48.0 port 26530 on 82.165.85.130 port 22
+Apr  2 06:45:21 10.71.48.0 u96981454 Accepted password for u96981454 from 10.71.48.0 port 26530 ssh2
+Apr  2 06:45:22 10.71.48.0 u96981454 Starting session: subsystem 'sftp' for u96981454 from 10.71.48.0 port 26528
+Apr  2 06:45:22 10.71.48.0 u96981454 session opened for local user u96981454 from [10.71.48.0]
+Apr  2 06:45:22 10.71.48.0 u96981454 Starting session: subsystem 'sftp' for u96981454 from 10.71.48.0 port 26530
+Apr  2 06:45:22 10.71.48.0 u96981454 session opened for local user u96981454 from [10.71.48.0]
+Apr  2 06:45:22 10.71.48.0 u96981454 sent status No such file
+Apr  2 06:45:23 10.71.48.0 u96981454 sent status No such file
+Apr  2 06:45:24 10.71.48.0 u96981454 sent status No such file
+Apr  2 06:45:25 10.71.48.0 u96981454 mkdir name "/css" mode 0777
+Apr  2 06:45:25 10.71.48.0 u96981454 [10.71.48.0|mkdir|0|0|511|0|0|2f637373|]
+Apr  2 06:45:27 10.71.48.0 u96981454 sent status No such file
+Apr  2 06:45:27 10.71.48.0 u96981454 sent status No such file
+Apr  2 06:45:28 10.71.48.0 u96981454 open "/css/animate.css" flags WRITE,CREATE,TRUNCATE mode 0666
+Apr  2 06:45:28 10.71.48.0 u96981454 open "/css/gumby.css" flags WRITE,CREATE,TRUNCATE mode 0666
+Apr  2 06:45:28 10.71.48.0 u96981454 close "/css/gumby.css" bytes read 0 written 13954
+Apr  2 06:45:28 10.71.48.0 u96981454 [10.71.48.0|put|0|13954|0|0|0|2f6373732f67756d62792e637373|]
+Apr  2 06:45:29 10.71.48.0 u96981454 close "/css/animate.css" bytes read 0 written 48262
+Apr  2 06:45:29 10.71.48.0 u96981454 [10.71.48.0|put|1|48262|0|0|0|2f6373732f616e696d6174652e637373|]
+Apr  2 06:45:29 10.71.48.0 u96981454 sent status No such file
+Apr  2 06:45:29 10.71.48.0 u96981454 sent status No such file
+Apr  2 06:45:29 10.71.48.0 u96981454 open "/css/style-app.css" flags WRITE,CREATE,TRUNCATE mode 0666
+Apr  2 06:45:29 10.71.48.0 u96981454 open "/css/style-register.css" flags WRITE,CREATE,TRUNCATE mode 0666
+Apr  2 06:45:30 10.71.48.0 u96981454 close "/css/style-app.css" bytes read 0 written 4558
+Apr  2 06:45:30 10.71.48.0 u96981454 [10.71.48.0|put|1|4558|0|0|0|2f6373732f7374796c652d6170702e637373|]
+Apr  2 06:45:30 10.71.48.0 u96981454 close "/css/style-register.css" bytes read 0 written 3324
+Apr  2 06:45:30 10.71.48.0 u96981454 [10.71.48.0|put|1|3324|0|0|0|2f6373732f7374796c652d72656769737465722e637373|]
+Apr  2 06:45:30 10.71.48.0 u96981454 sent status No such file
+Apr  2 06:45:30 10.71.48.0 u96981454 sent status No such file
+Apr  2 06:45:31 10.71.48.0 u96981454 open "/css/style-results.css" flags WRITE,CREATE,TRUNCATE mode 0666
+Apr  2 06:45:31 10.71.48.0 u96981454 open "/css/style-simulateur.css" flags WRITE,CREATE,TRUNCATE mode 0666
+Apr  2 06:45:31 10.71.48.0 u96981454 close "/css/style-results.css" bytes read 0 written 1640
+Apr  2 06:45:31 10.71.48.0 u96981454 [10.71.48.0|put|0|1640|0|0|0|2f6373732f7374796c652d726573756c74732e637373|]
+Apr  2 06:45:32 10.71.48.0 u96981454 close "/css/style-simulateur.css" bytes read 0 written 1168
+Apr  2 06:45:32 10.71.48.0 u96981454 [10.71.48.0|put|1|1168|0|0|0|2f6373732f7374796c652d73696d756c61746575722e637373|]
+Apr  2 06:45:32 10.71.48.0 u96981454 sent status No such file
+Apr  2 06:45:32 10.71.48.0 u96981454 sent status No such file
+Apr  2 06:45:32 10.71.48.0 u96981454 open "/css/style.css" flags WRITE,CREATE,TRUNCATE mode 0666
+Apr  2 06:45:32 10.71.48.0 u96981454 sent status No such file
+Apr  2 06:45:33 10.71.48.0 u96981454 close "/css/style.css" bytes read 0 written 14234
+Apr  2 06:45:33 10.71.48.0 u96981454 [10.71.48.0|put|1|14234|0|0|0|2f6373732f7374796c652e637373|]
+Apr  2 06:45:33 10.71.48.0 u96981454 sent status No such file
+Apr  2 06:45:34 10.71.48.0 u96981454 mkdir name "/js" mode 0777
+Apr  2 06:45:34 10.71.48.0 u96981454 [10.71.48.0|mkdir|0|0|511|0|0|2f6a73|]
+Apr  2 06:45:37 10.71.48.0 u96981454 sent status No such file
+Apr  2 06:45:37 10.71.48.0 u96981454 sent status No such file
+Apr  2 06:45:37 10.71.48.0 u96981454 open "/js/classie.js" flags WRITE,CREATE,TRUNCATE mode 0666
+Apr  2 06:45:37 10.71.48.0 u96981454 open "/js/jquery-1.9.1.min.js" flags WRITE,CREATE,TRUNCATE mode 0666
+Apr  2 06:45:38 10.71.48.0 u96981454 close "/js/classie.js" bytes read 0 written 1835
+Apr  2 06:45:38 10.71.48.0 u96981454 [10.71.48.0|put|1|1835|0|0|0|2f6a732f636c61737369652e6a73|]
+Apr  2 06:45:38 10.71.48.0 u96981454 sent status No such file
+Apr  2 06:45:38 10.71.48.0 u96981454 close "/js/jquery-1.9.1.min.js" bytes read 0 written 93057
+Apr  2 06:45:38 10.71.48.0 u96981454 [10.71.48.0|put|1|93057|0|0|0|2f6a732f6a71756572792d312e392e312e6d696e2e6a73|]
+Apr  2 06:45:38 10.71.48.0 u96981454 sent status No such file
+Apr  2 06:45:39 10.71.48.0 u96981454 open "/js/jquery.scrollto.js" flags WRITE,CREATE,TRUNCATE mode 0666
+Apr  2 06:45:39 10.71.48.0 u96981454 open "/js/main.js" flags WRITE,CREATE,TRUNCATE mode 0666
+Apr  2 06:45:39 10.71.48.0 u96981454 close "/js/jquery.scrollto.js" bytes read 0 written 980
+Apr  2 06:45:39 10.71.48.0 u96981454 [10.71.48.0|put|0|980|0|0|0|2f6a732f6a71756572792e7363726f6c6c746f2e6a73|]
+Apr  2 06:45:39 10.71.48.0 u96981454 sent status No such file
+Apr  2 06:45:39 10.71.48.0 u96981454 close "/js/main.js" bytes read 0 written 5511
+Apr  2 06:45:39 10.71.48.0 u96981454 [10.71.48.0|put|0|5511|0|0|0|2f6a732f6d61696e2e6a73|]
+Apr  2 06:45:40 10.71.48.0 u96981454 sent status No such file
+Apr  2 06:45:40 10.71.48.0 u96981454 open "/js/mediaCheck.js" flags WRITE,CREATE,TRUNCATE mode 0666
+Apr  2 06:45:40 10.71.48.0 u96981454 open "/js/modernizr-2.6.2.min.js" flags WRITE,CREATE,TRUNCATE mode 0666
+Apr  2 06:45:41 10.71.48.0 u96981454 close "/js/mediaCheck.js" bytes read 0 written 3166
+Apr  2 06:45:41 10.71.48.0 u96981454 [10.71.48.0|put|1|3166|0|0|0|2f6a732f6d65646961436865636b2e6a73|]
+Apr  2 06:45:41 10.71.48.0 u96981454 sent status No such file
+Apr  2 06:45:41 10.71.48.0 u96981454 close "/js/modernizr-2.6.2.min.js" bytes read 0 written 16227
+Apr  2 06:45:41 10.71.48.0 u96981454 [10.71.48.0|put|1|16227|0|0|0|2f6a732f6d6f6465726e697a722d322e362e322e6d696e2e6a73|]
+Apr  2 06:45:41 10.71.48.0 u96981454 sent status No such file
+Apr  2 06:45:41 10.71.48.0 u96981454 open "/js/script-app.js" flags WRITE,CREATE,TRUNCATE mode 0666
+Apr  2 06:45:42 10.71.48.0 u96981454 open "/js/script-register.js" flags WRITE,CREATE,TRUNCATE mode 0666
+Apr  2 06:45:42 10.71.48.0 u96981454 close "/js/script-app.js" bytes read 0 written 635
+Apr  2 06:45:42 10.71.48.0 u96981454 [10.71.48.0|put|1|635|0|0|0|2f6a732f7363726970742d6170702e6a73|]
+Apr  2 06:45:42 10.71.48.0 u96981454 sent status No such file
+Apr  2 06:45:42 10.71.48.0 u96981454 close "/js/script-register.js" bytes read 0 written 170
+Apr  2 06:45:42 10.71.48.0 u96981454 [10.71.48.0|put|0|170|0|0|0|2f6a732f7363726970742d72656769737465722e6a73|]
+Apr  2 06:45:43 10.71.48.0 u96981454 sent status No such file
+Apr  2 06:45:43 10.71.48.0 u96981454 open "/js/utils.js" flags WRITE,CREATE,TRUNCATE mode 0666
+Apr  2 06:45:43 10.71.48.0 u96981454 open "/js/waypoints.min.js" flags WRITE,CREATE,TRUNCATE mode 0666
+Apr  2 06:45:43 10.71.48.0 u96981454 close "/js/utils.js" bytes read 0 written 2325
+Apr  2 06:45:43 10.71.48.0 u96981454 [10.71.48.0|put|0|2325|0|0|0|2f6a732f7574696c732e6a73|]
+Apr  2 06:45:44 10.71.48.0 u96981454 sent status No such file
+Apr  2 06:45:44 10.71.48.0 u96981454 close "/js/waypoints.min.js" bytes read 0 written 16857
+Apr  2 06:45:44 10.71.48.0 u96981454 [10.71.48.0|put|1|16857|0|0|0|2f6a732f776179706f696e74732e6d696e2e6a73|]
+Apr  2 06:45:44 10.71.48.0 u96981454 sent status No such file
+Apr  2 06:45:44 10.71.48.0 u96981454 sent status No such file
+Apr  2 06:45:45 10.71.48.0 u96981454 sent status No such file
+Apr  2 06:45:45 10.71.48.0 u96981454 sent status No such file
+Apr  2 06:45:46 10.71.48.0 u96981454 sent status No such file
+Apr  2 06:45:46 10.71.48.0 u96981454 mkdir name "/public" mode 0777
+Apr  2 06:45:46 10.71.48.0 u96981454 [10.71.48.0|mkdir|0|0|511|0|0|2f7075626c6963|]
+Apr  2 06:45:46 10.71.48.0 u96981454 mkdir name "/server" mode 0777
+Apr  2 06:45:46 10.71.48.0 u96981454 [10.71.48.0|mkdir|0|0|511|0|0|2f736572766572|]
+Apr  2 06:45:49 10.71.48.0 u96981454 sent status No such file
+Apr  2 06:45:49 10.71.48.0 u96981454 sent status No such file
+Apr  2 06:45:49 10.71.48.0 u96981454 open "/public/index.php" flags WRITE,CREATE,TRUNCATE mode 0666
+Apr  2 06:45:50 10.71.48.0 u96981454 open "/server/calcul.php" flags WRITE,CREATE,TRUNCATE mode 0666
+Apr  2 06:45:50 10.71.48.0 u96981454 close "/public/index.php" bytes read 0 written 8757
+Apr  2 06:45:50 10.71.48.0 u96981454 [10.71.48.0|put|1|8757|0|0|0|2f7075626c69632f696e6465782e706870|]
+Apr  2 06:45:50 10.71.48.0 u96981454 close "/server/calcul.php" bytes read 0 written 8356
+Apr  2 06:45:50 10.71.48.0 u96981454 [10.71.48.0|put|0|8356|0|0|0|2f7365727665722f63616c63756c2e706870|]
+Apr  2 06:45:50 10.71.48.0 u96981454 sent status No such file
+Apr  2 06:45:51 10.71.48.0 u96981454 sent status No such file
+Apr  2 06:45:51 10.71.48.0 u96981454 open "/server/functions.php" flags WRITE,CREATE,TRUNCATE mode 0666
+Apr  2 06:45:51 10.71.48.0 u96981454 open "/server/errors.php" flags WRITE,CREATE,TRUNCATE mode 0666
+Apr  2 06:45:52 10.71.48.0 u96981454 close "/server/functions.php" bytes read 0 written 13650
+Apr  2 06:45:52 10.71.48.0 u96981454 [10.71.48.0|put|1|13650|0|0|0|2f7365727665722f66756e6374696f6e732e706870|]
+Apr  2 06:45:52 10.71.48.0 u96981454 sent status No such file
+Apr  2 06:45:52 10.71.48.0 u96981454 close "/server/errors.php" bytes read 0 written 186
+Apr  2 06:45:52 10.71.48.0 u96981454 [10.71.48.0|put|1|186|0|0|0|2f7365727665722f6572726f72732e706870|]
+Apr  2 06:45:52 10.71.48.0 u96981454 sent status No such file
+Apr  2 06:45:52 10.71.48.0 u96981454 open "/server/server.php" flags WRITE,CREATE,TRUNCATE mode 0666
+Apr  2 06:45:53 10.71.48.0 u96981454 sent status No such file
+Apr  2 06:45:53 10.71.48.0 u96981454 sent status No such file
+Apr  2 06:45:53 10.71.48.0 u96981454 close "/server/server.php" bytes read 0 written 4630
+Apr  2 06:45:53 10.71.48.0 u96981454 [10.71.48.0|put|1|4630|0|0|0|2f7365727665722f7365727665722e706870|]
+Apr  2 06:45:53 10.71.48.0 u96981454 sent status No such file
+Apr  2 06:45:54 10.71.48.0 u96981454 sent status No such file
+Apr  2 06:45:55 10.71.48.0 u96981454 sent status No such file
+Apr  2 06:45:55 10.71.48.0 u96981454 mkdir name "/docs" mode 0777
+Apr  2 06:45:55 10.71.48.0 u96981454 [10.71.48.0|mkdir|0|0|511|0|0|2f646f6373|]
+Apr  2 06:45:57 10.71.48.0 u96981454 sent status No such file
+Apr  2 06:45:57 10.71.48.0 u96981454 mkdir name "/docs/imgs" mode 0777
+Apr  2 06:45:57 10.71.48.0 u96981454 [10.71.48.0|mkdir|0|0|511|0|0|2f646f63732f696d6773|]
+Apr  2 06:46:00 10.71.48.0 u96981454 sent status No such file
+Apr  2 06:46:00 10.71.48.0 u96981454 sent status No such file
+Apr  2 06:46:00 10.71.48.0 u96981454 open "/docs/imgs/2.png" flags WRITE,CREATE,TRUNCATE mode 0666
+Apr  2 06:46:00 10.71.48.0 u96981454 open "/docs/imgs/bg.jpg" flags WRITE,CREATE,TRUNCATE mode 0666
+Apr  2 06:46:01 10.71.48.0 u96981454 close "/docs/imgs/2.png" bytes read 0 written 34705
+Apr  2 06:46:01 10.71.48.0 u96981454 [10.71.48.0|put|1|34705|0|0|0|2f646f63732f696d67732f322e706e67|]
+Apr  2 06:46:01 10.71.48.0 u96981454 close "/docs/imgs/bg.jpg" bytes read 0 written 98229
+Apr  2 06:46:01 10.71.48.0 u96981454 [10.71.48.0|put|1|98229|0|0|0|2f646f63732f696d67732f62672e6a7067|]
+Apr  2 06:46:01 10.71.48.0 u96981454 sent status No such file
+Apr  2 06:46:01 10.71.48.0 u96981454 sent status No such file
+Apr  2 06:46:02 10.71.48.0 u96981454 open "/docs/imgs/down.png" flags WRITE,CREATE,TRUNCATE mode 0666
+Apr  2 06:46:02 10.71.48.0 u96981454 open "/docs/imgs/img200x75.png" flags WRITE,CREATE,TRUNCATE mode 0666
+Apr  2 06:46:02 10.71.48.0 u96981454 close "/docs/imgs/down.png" bytes read 0 written 522
+Apr  2 06:46:02 10.71.48.0 u96981454 [10.71.48.0|put|0|522|0|0|0|2f646f63732f696d67732f646f776e2e706e67|]
+Apr  2 06:46:02 10.71.48.0 u96981454 close "/docs/imgs/img200x75.png" bytes read 0 written 522
+Apr  2 06:46:02 10.71.48.0 u96981454 [10.71.48.0|put|0|522|0|0|0|2f646f63732f696d67732f696d673230307837352e706e67|]
+Apr  2 06:46:03 10.71.48.0 u96981454 sent status No such file
+Apr  2 06:46:03 10.71.48.0 u96981454 sent status No such file
+Apr  2 06:46:03 10.71.48.0 u96981454 open "/docs/imgs/img60x60.png" flags WRITE,CREATE,TRUNCATE mode 0666
+Apr  2 06:46:03 10.71.48.0 u96981454 open "/docs/imgs/immotool-agent.jpg" flags WRITE,CREATE,TRUNCATE mode 0666
+Apr  2 06:46:04 10.71.48.0 u96981454 close "/docs/imgs/img60x60.png" bytes read 0 written 213
+Apr  2 06:46:04 10.71.48.0 u96981454 [10.71.48.0|put|1|213|0|0|0|2f646f63732f696d67732f696d6736307836302e706e67|]
+Apr  2 06:46:04 10.71.48.0 u96981454 close "/docs/imgs/immotool-agent.jpg" bytes read 0 written 45831
+Apr  2 06:46:04 10.71.48.0 u96981454 [10.71.48.0|put|1|45831|0|0|0|2f646f63732f696d67732f696d6d6f746f6f6c2d6167656e742e6a7067|]
+Apr  2 06:46:04 10.71.48.0 u96981454 sent status No such file
+Apr  2 06:46:04 10.71.48.0 u96981454 sent status No such file
+Apr  2 06:46:05 10.71.48.0 u96981454 open "/docs/imgs/immotool-ecoute.jpg" flags WRITE,CREATE,TRUNCATE mode 0666
+Apr  2 06:46:05 10.71.48.0 u96981454 open "/docs/imgs/immotool-simulateur-immobilier.jpg" flags WRITE,CREATE,TRUNCATE mode 0666
+Apr  2 06:46:05 10.71.48.0 u96981454 close "/docs/imgs/immotool-simulateur-immobilier.jpg" bytes read 0 written 73628
+Apr  2 06:46:05 10.71.48.0 u96981454 [10.71.48.0|put|0|73628|0|0|0|2f646f63732f696d67732f696d6d6f746f6f6c2d73696d756c61746575722d696d6d6f62696c6965722e6a7067|]
+Apr  2 06:46:05 10.71.48.0 u96981454 close "/docs/imgs/immotool-ecoute.jpg" bytes read 0 written 89546
+Apr  2 06:46:05 10.71.48.0 u96981454 [10.71.48.0|put|0|89546|0|0|0|2f646f63732f696d67732f696d6d6f746f6f6c2d65636f7574652e6a7067|]
+Apr  2 06:46:06 10.71.48.0 u96981454 sent status No such file
+Apr  2 06:46:06 10.71.48.0 u96981454 sent status No such file
+Apr  2 06:46:06 10.71.48.0 u96981454 open "/docs/imgs/immotool-simulateur.png" flags WRITE,CREATE,TRUNCATE mode 0666
+Apr  2 06:46:06 10.71.48.0 u96981454 open "/docs/imgs/loading.gif" flags WRITE,CREATE,TRUNCATE mode 0666
+Apr  2 06:46:07 10.71.48.0 u96981454 close "/docs/imgs/loading.gif" bytes read 0 written 4723
+Apr  2 06:46:07 10.71.48.0 u96981454 [10.71.48.0|put|1|4723|0|0|0|2f646f63732f696d67732f6c6f6164696e672e676966|]
+Apr  2 06:46:07 10.71.48.0 u96981454 close "/docs/imgs/immotool-simulateur.png" bytes read 0 written 174806
+Apr  2 06:46:07 10.71.48.0 u96981454 [10.71.48.0|put|1|174806|0|0|0|2f646f63732f696d67732f696d6d6f746f6f6c2d73696d756c61746575722e706e67|]
+Apr  2 06:46:07 10.71.48.0 u96981454 sent status No such file
+Apr  2 06:46:07 10.71.48.0 u96981454 sent status No such file
+Apr  2 06:46:08 10.71.48.0 u96981454 open "/docs/imgs/logo-IMMOTOOL.png" flags WRITE,CREATE,TRUNCATE mode 0666
+Apr  2 06:46:08 10.71.48.0 u96981454 open "/docs/imgs/mediumarrows.png" flags WRITE,CREATE,TRUNCATE mode 0666
+Apr  2 06:46:08 10.71.48.0 u96981454 close "/docs/imgs/logo-IMMOTOOL.png" bytes read 0 written 3145
+Apr  2 06:46:08 10.71.48.0 u96981454 [10.71.48.0|put|0|3145|0|0|0|2f646f63732f696d67732f6c6f676f2d494d4d4f544f4f4c2e706e67|]
+Apr  2 06:46:08 10.71.48.0 u96981454 close "/docs/imgs/mediumarrows.png" bytes read 0 written 820
+Apr  2 06:46:08 10.71.48.0 u96981454 [10.71.48.0|put|0|820|0|0|0|2f646f63732f696d67732f6d656469756d6172726f77732e706e67|]
+Apr  2 06:46:09 10.71.48.0 u96981454 sent status No such file
+Apr  2 06:46:09 10.71.48.0 u96981454 sent status No such file
+Apr  2 06:46:09 10.71.48.0 u96981454 open "/docs/imgs/user-account.png" flags WRITE,CREATE,TRUNCATE mode 0666
+Apr  2 06:46:09 10.71.48.0 u96981454 open "/docs/imgs/visite-appartement.jpg" flags WRITE,CREATE,TRUNCATE mode 0666
+Apr  2 06:46:10 10.71.48.0 u96981454 close "/docs/imgs/user-account.png" bytes read 0 written 3211
+Apr  2 06:46:10 10.71.48.0 u96981454 [10.71.48.0|put|1|3211|0|0|0|2f646f63732f696d67732f757365722d6163636f756e742e706e67|]
+Apr  2 06:46:10 10.71.48.0 u96981454 close "/docs/imgs/visite-appartement.jpg" bytes read 0 written 47047
+Apr  2 06:46:10 10.71.48.0 u96981454 [10.71.48.0|put|1|47047|0|0|0|2f646f63732f696d67732f7669736974652d617070617274656d656e742e6a7067|]
+Apr  2 06:46:10 10.71.48.0 u96981454 sent status No such file
+Apr  2 06:46:11 10.71.48.0 u96981454 sent status No such file
+Apr  2 06:46:12 10.71.48.0 u96981454 sent status No such file
+Apr  2 06:46:13 10.71.48.0 u96981454 mkdir name "/public/app" mode 0777
+Apr  2 06:46:13 10.71.48.0 u96981454 [10.71.48.0|mkdir|0|0|511|0|0|2f7075626c69632f617070|]
+Apr  2 06:46:15 10.71.48.0 u96981454 sent status No such file
+Apr  2 06:46:15 10.71.48.0 u96981454 sent status No such file
+Apr  2 06:46:16 10.71.48.0 u96981454 open "/public/app/app.php" flags WRITE,CREATE,TRUNCATE mode 0666
+Apr  2 06:46:16 10.71.48.0 u96981454 open "/public/app/contact.php" flags WRITE,CREATE,TRUNCATE mode 0666
+Apr  2 06:46:16 10.71.48.0 u96981454 close "/public/app/app.php" bytes read 0 written 7054
+Apr  2 06:46:16 10.71.48.0 u96981454 [10.71.48.0|put|0|7054|0|0|0|2f7075626c69632f6170702f6170702e706870|]
+Apr  2 06:46:16 10.71.48.0 u96981454 close "/public/app/contact.php" bytes read 0 written 3277
+Apr  2 06:46:16 10.71.48.0 u96981454 [10.71.48.0|put|0|3277|0|0|0|2f7075626c69632f6170702f636f6e746163742e706870|]
+Apr  2 06:46:17 10.71.48.0 u96981454 sent status No such file
+Apr  2 06:46:17 10.71.48.0 u96981454 sent status No such file
+Apr  2 06:46:17 10.71.48.0 u96981454 open "/public/app/header.php" flags WRITE,CREATE,TRUNCATE mode 0666
+Apr  2 06:46:17 10.71.48.0 u96981454 open "/public/app/mes-visites.php" flags WRITE,CREATE,TRUNCATE mode 0666
+Apr  2 06:46:18 10.71.48.0 u96981454 close "/public/app/header.php" bytes read 0 written 1956
+Apr  2 06:46:18 10.71.48.0 u96981454 [10.71.48.0|put|1|1956|0|0|0|2f7075626c69632f6170702f6865616465722e706870|]
+Apr  2 06:46:18 10.71.48.0 u96981454 close "/public/app/mes-visites.php" bytes read 0 written 2775
+Apr  2 06:46:18 10.71.48.0 u96981454 [10.71.48.0|put|1|2775|0|0|0|2f7075626c69632f6170702f6d65732d766973697465732e706870|]
+Apr  2 06:46:18 10.71.48.0 u96981454 sent status No such file
+Apr  2 06:46:18 10.71.48.0 u96981454 sent status No such file
+Apr  2 06:46:19 10.71.48.0 u96981454 open "/public/app/microBIC.php" flags WRITE,CREATE,TRUNCATE mode 0666
+Apr  2 06:46:19 10.71.48.0 u96981454 open "/public/app/microFoncier.php" flags WRITE,CREATE,TRUNCATE mode 0666
+Apr  2 06:46:19 10.71.48.0 u96981454 close "/public/app/microBIC.php" bytes read 0 written 6085
+Apr  2 06:46:19 10.71.48.0 u96981454 [10.71.48.0|put|0|6085|0|0|0|2f7075626c69632f6170702f6d6963726f4249432e706870|]
+Apr  2 06:46:19 10.71.48.0 u96981454 close "/public/app/microFoncier.php" bytes read 0 written 6054
+Apr  2 06:46:19 10.71.48.0 u96981454 [10.71.48.0|put|0|6054|0|0|0|2f7075626c69632f6170702f6d6963726f466f6e636965722e706870|]
+Apr  2 06:46:19 10.71.48.0 u96981454 sent status No such file
+Apr  2 06:46:20 10.71.48.0 u96981454 sent status No such file
+Apr  2 06:46:20 10.71.48.0 u96981454 open "/public/app/mon-agent.php" flags WRITE,CREATE,TRUNCATE mode 0666
+Apr  2 06:46:20 10.71.48.0 u96981454 open "/public/app/reel.php" flags WRITE,CREATE,TRUNCATE mode 0666
+Apr  2 06:46:21 10.71.48.0 u96981454 close "/public/app/mon-agent.php" bytes read 0 written 4189
+Apr  2 06:46:21 10.71.48.0 u96981454 [10.71.48.0|put|1|4189|0|0|0|2f7075626c69632f6170702f6d6f6e2d6167656e742e706870|]
+Apr  2 06:46:21 10.71.48.0 u96981454 close "/public/app/reel.php" bytes read 0 written 5801
+Apr  2 06:46:21 10.71.48.0 u96981454 [10.71.48.0|put|1|5801|0|0|0|2f7075626c69632f6170702f7265656c2e706870|]
+Apr  2 06:46:21 10.71.48.0 u96981454 sent status No such file
+Apr  2 06:46:21 10.71.48.0 u96981454 sent status No such file
+Apr  2 06:46:21 10.71.48.0 u96981454 open "/public/app/reel_LMNP.php" flags WRITE,CREATE,TRUNCATE mode 0666
+Apr  2 06:46:22 10.71.48.0 u96981454 open "/public/app/result-simulateur.php" flags WRITE,CREATE,TRUNCATE mode 0666
+Apr  2 06:46:22 10.71.48.0 u96981454 close "/public/app/reel_LMNP.php" bytes read 0 written 6089
+Apr  2 06:46:22 10.71.48.0 u96981454 [10.71.48.0|put|1|6089|0|0|0|2f7075626c69632f6170702f7265656c5f4c4d4e502e706870|]
+Apr  2 06:46:22 10.71.48.0 u96981454 close "/public/app/result-simulateur.php" bytes read 0 written 11290
+Apr  2 06:46:22 10.71.48.0 u96981454 [10.71.48.0|put|0|11290|0|0|0|2f7075626c69632f6170702f726573756c742d73696d756c61746575722e706870|]
+Apr  2 06:46:22 10.71.48.0 u96981454 sent status No such file
+Apr  2 06:46:23 10.71.48.0 u96981454 sent status No such file
+Apr  2 06:46:23 10.71.48.0 u96981454 open "/public/app/simulateur.php" flags WRITE,CREATE,TRUNCATE mode 0666
+Apr  2 06:46:23 10.71.48.0 u96981454 sent status No such file
+Apr  2 06:46:24 10.71.48.0 u96981454 close "/public/app/simulateur.php" bytes read 0 written 14845
+Apr  2 06:46:24 10.71.48.0 u96981454 [10.71.48.0|put|1|14845|0|0|0|2f7075626c69632f6170702f73696d756c61746575722e706870|]
+Apr  2 06:46:24 10.71.48.0 u96981454 sent status No such file
+Apr  2 06:46:25 10.71.48.0 u96981454 mkdir name "/public/site" mode 0777
+Apr  2 06:46:25 10.71.48.0 u96981454 [10.71.48.0|mkdir|0|0|511|0|0|2f7075626c69632f73697465|]
+Apr  2 06:46:28 10.71.48.0 u96981454 sent status No such file
+Apr  2 06:46:28 10.71.48.0 u96981454 sent status No such file
+Apr  2 06:46:29 10.71.48.0 u96981454 open "/public/site/cgu.php" flags WRITE,CREATE,TRUNCATE mode 0666
+Apr  2 06:46:29 10.71.48.0 u96981454 open "/public/site/footer.php" flags WRITE,CREATE,TRUNCATE mode 0666
+Apr  2 06:46:29 10.71.48.0 u96981454 close "/public/site/cgu.php" bytes read 0 written 14451
+Apr  2 06:46:29 10.71.48.0 u96981454 [10.71.48.0|put|0|14451|0|0|0|2f7075626c69632f736974652f6367752e706870|]
+Apr  2 06:46:29 10.71.48.0 u96981454 close "/public/site/footer.php" bytes read 0 written 1317
+Apr  2 06:46:29 10.71.48.0 u96981454 [10.71.48.0|put|0|1317|0|0|0|2f7075626c69632f736974652f666f6f7465722e706870|]
+Apr  2 06:46:30 10.71.48.0 u96981454 sent status No such file
+Apr  2 06:46:30 10.71.48.0 u96981454 sent status No such file
+Apr  2 06:46:30 10.71.48.0 u96981454 open "/public/site/politique.php" flags WRITE,CREATE,TRUNCATE mode 0666
+Apr  2 06:46:30 10.71.48.0 u96981454 open "/public/site/register.php" flags WRITE,CREATE,TRUNCATE mode 0666
+Apr  2 06:46:31 10.71.48.0 u96981454 close "/public/site/politique.php" bytes read 0 written 8209
+Apr  2 06:46:31 10.71.48.0 u96981454 [10.71.48.0|put|1|8209|0|0|0|2f7075626c69632f736974652f706f6c6974697175652e706870|]
+Apr  2 06:46:31 10.71.48.0 u96981454 close "/public/site/register.php" bytes read 0 written 3107
+Apr  2 06:46:31 10.71.48.0 u96981454 [10.71.48.0|put|1|3107|0|0|0|2f7075626c69632f736974652f72656769737465722e706870|]
+Apr  2 06:47:31 10.71.48.0 u96981454 session closed for local user u96981454 from [10.71.48.0]
+Apr  2 06:47:31 10.71.48.0 u96981454 Connection closed by 10.71.48.0
+Apr  2 06:47:31 10.71.48.0 u96981454 session closed for local user u96981454 from [10.71.48.0]
+Apr  2 06:47:32 10.71.48.0 u96981454 Connection closed by 10.71.48.0
+Apr  2 06:48:30 10.71.48.0 u96981454 Connection from 10.71.48.0 port 55384 on 82.165.85.130 port 22
+Apr  2 06:48:31 10.71.48.0 u96981454 Accepted password for u96981454 from 10.71.48.0 port 55384 ssh2
+Apr  2 06:48:30 10.71.48.0 u96981454 Connection from 10.71.48.0 port 55390 on 82.165.85.130 port 22
+Apr  2 06:48:31 10.71.48.0 u96981454 Accepted password for u96981454 from 10.71.48.0 port 55390 ssh2
+Apr  2 06:48:32 10.71.48.0 u96981454 Starting session: subsystem 'sftp' for u96981454 from 10.71.48.0 port 55390
+Apr  2 06:48:32 10.71.48.0 u96981454 Starting session: subsystem 'sftp' for u96981454 from 10.71.48.0 port 55384
+Apr  2 06:48:32 10.71.48.0 u96981454 session opened for local user u96981454 from [10.71.48.0]
+Apr  2 06:48:32 10.71.48.0 u96981454 session opened for local user u96981454 from [10.71.48.0]
+Apr  2 06:48:32 10.71.48.0 u96981454 sent status No such file
+Apr  2 06:48:34 10.71.48.0 u96981454 open "/logs/access.log.14.2" flags READ mode 0666
+Apr  2 06:48:34 10.71.48.0 u96981454 open "/logs/sftp.log" flags READ mode 0666

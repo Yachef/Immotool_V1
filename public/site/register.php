@@ -3,6 +3,10 @@
 <html>
 
 <head>
+	<title>Immotool - Votre conseiller immobilier 100% gratuit !</title>
+  	<!-- Favicon /-->
+  	<link rel="shortcut icon" href="../../docs/imgs/logo-IMMOTOOL.png" type="image/x-icon" /> <!-- Favicon /-->
+
 	<link rel="stylesheet" href="../../css/style-register.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	<script src="../../js/script-register.js"></script>
@@ -37,7 +41,7 @@
 					</form>
 					<div class="hr"></div>
 					<div class="foot-lnk">
-						<a href="#forgot">Mot de passe oublié ? </a>
+						<a href="forgot-password.php">Mot de passe oublié ? </a>
 					</div>
 				</div>
 				<div class="sign-up-htm">
@@ -60,7 +64,7 @@
 							<input type="email" class="input" name="email" value="<?php echo $email; ?>">
 						</div>
 						<div class="group">
-							<input id="check" type="checkbox" class="check" checked>
+							<input id="check2" type="checkbox" class="check" checked>
 							<label for="check"><span class="icon"></span> J'accepte les <a href = "cgu.php">CGU</a></label>
 						</div>
 						<div class="group">

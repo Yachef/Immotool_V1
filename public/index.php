@@ -100,7 +100,7 @@
 		          
 		          <div class="space"></div>
 		          
-		          <a href="register.php?login=1" class="button-white">Commencer</a> 
+		          <a href="site/register.php?login=1" class="button-white">Commencer</a> 
 		  	  
 		  	    </div>
 		  	  
@@ -144,7 +144,7 @@
 
 					<div class="space"></div>
 					
-					<a  class="js-open-modal button-blue" href = "site/register.php?login=1">S'inscrire</a> 
+					<a  class="button-blue" href = "site/register.php?login=1">S'inscrire</a> 
 					
 				
 				</div>

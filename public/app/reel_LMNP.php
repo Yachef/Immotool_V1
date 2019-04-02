@@ -3,6 +3,8 @@
 <html>
 <head>
 <meta charset="UTF-8">
+<title>Immotool - Votre conseiller immobilier 100% gratuit !</title>
+
     <!-- BOOTSTRAP -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
@@ -14,6 +16,8 @@
     <!-- FONT AWESOME -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
     
+    <link rel="shortcut icon" href="../../docs/imgs/logo-IMMOTOOL.png" type="image/x-icon" /> <!-- Favicon /-->
+
 
     <!-- FONTS  -->
     <link href="https://fonts.googleapis.com/css?family=Fira+Sans" rel="stylesheet">

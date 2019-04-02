@@ -4,6 +4,8 @@
 
 <head>
     <meta charset="UTF-8">
+  <title>Immotool - Votre conseiller immobilier 100% gratuit !</title>
+
     <!-- BOOTSTRAP -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
@@ -15,6 +17,8 @@
     <!-- FONT AWESOME -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
         integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+
+      <link rel="shortcut icon" href="../../docs/imgs/logo-IMMOTOOL.png" type="image/x-icon" /> <!-- Favicon /-->
 
 
     <!-- FONTS  -->
@@ -51,7 +55,7 @@
 
 
                     <section id="form" class="content-wrapper">
-                        <form class="content-container" action="#" method="post">
+                        <form class="content-container" action="result-simulateur.php" method="post">
                             <div id="fraisdachat" class="form-container">
                                 <div>
                                     <button type="submit" style="float:right;display:inline-block;"
@@ -118,7 +122,7 @@
                                         <div class="infobulle">Taux d'intérêt de votre prêt immobilier <a href = "https://www.meilleurtaux.com/credit-immobilier/barometre-des-taux.html" target = _blank>Plus d'info</a></div>
                                     </div></label>
                                 <input type="number" name="taux" placeholder="0.50" step="any" required
-                                    value=<?php if(isset($_SESSION['taux'])){echo $_SESSION['taux'];}  ?>> %<br>
+                                    value=<?php if(isset($_SESSION['taux'])){echo $_SESSION['taux']*100;}  ?>> %<br>
 
                                 <label for="dureeEmprunt">Durée de l'emprunt (en années) <div
                                         class="fas fa-question-circle element-info" href="#" target=_blank>
@@ -133,7 +137,7 @@
                                         <div class="infobulle">Taux d'assurance crédit de votre prêt immobilier <a href = "https://reassurez-moi.fr/guide/cout-assurance-pret-immobilier" target = _blank>Plus d'info</a></div>
                                     </div></label>
                                 <input type="number" name="assuranceCredit" placeholder="0.77" required step="any"
-                                    value=<?php if(isset($_SESSION['assuranceCredit'])){echo $_SESSION['assuranceCredit'];} ?>>
+                                    value=<?php if(isset($_SESSION['assuranceCredit'])){echo $_SESSION['assuranceCredit']*100;} ?>>
                                 %<br>
                             </div>
 
@@ -177,7 +181,7 @@
                                         <div class="infobulle">Durée durant laquelle vous prévoyez que votre bien sera inoccupé</div>
                                     </div></label>
                                 <input type="number" name="vacances" placeholder="10" required step="any"
-                                    value=<?php if(isset($_SESSION['vacances'])){echo $_SESSION['vacances'];}  ?>> %<br>
+                                    value=<?php if(isset($_SESSION['vacances'])){echo $_SESSION['vacances']*100;}  ?>> %<br>
 
                                 <label for="autresRecettes">Autres recettes locatives / an <div
                                         class="fas fa-question-circle element-info" href="#" target=_blank>

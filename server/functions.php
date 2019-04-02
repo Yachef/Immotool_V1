@@ -156,6 +156,7 @@ function resetData(){
 function connectToDB(){
   try{
     $GLOBALS["db"] = mysqli_connect('localhost', 'yachef', 'yacleboss', 'calculermoncashflow',3306);
+    // $GLOBALS["db"] = mysqli_connect("db5000036975.hosting-data.io","dbu73555","F8ma9surnz2y!","dbs31976",3306);
   }
   catch(Exception $e){
     echo "Problème de connexion à la DB :".$e;
@@ -362,8 +363,6 @@ function tabImpotsFonciersBIC($mobilier,$prixAchat,$travaux,$fraisNotaire,$reven
     $revenuGlobal[$i] = 0.9 * $revenus;
     $impotsFonciers[$i] = 0;
     }
-  echo "Revenus Fonciers Imposables année ".$i." : ".$revenusFonciersImposables[$i]; 
-  echo "<br>";
   }
   return $impotsFonciers;
 }

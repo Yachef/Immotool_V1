@@ -4,6 +4,8 @@
 
 <head>
     <meta charset="UTF-8">
+  <title>Immotool - Votre conseiller immobilier 100% gratuit !</title>
+
     <!-- BOOTSTRAP -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
@@ -16,6 +18,8 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
         integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
 
+
+  <link rel="shortcut icon" href="../../docs/imgs/logo-IMMOTOOL.png" type="image/x-icon" /> <!-- Favicon /-->
 
     <!-- FONTS  -->
     <link href="https://fonts.googleapis.com/css?family=Fira+Sans" rel="stylesheet">
@@ -54,22 +58,41 @@
                         </section>
 
                         <div class="col-md-6 content-wrapper">
-                        <div class="suggestion-form content-container">
-                            <div class = "content-title"><h1>Contactez-nous !</h1></div>                            
-                            <h4>Des suggestions ? Des bugs ? Des idées ? Des problèmes ? D'autres questions ? Nous sommes à votre écoute !</h4>
-                            <form action="action_page.php" method="posts">
+                            <div class="suggestion-form content-container">
+                                <div class="content-title">
+                                    <h1>Contactez-nous !</h1>
+                                </div>
+                                <h4>Des suggestions ? Des bugs ? Des idées ? Des problèmes ? D'autres questions ? Nous
+                                    sommes à votre écoute !</h4>
+                                <form action="#" method="post">
 
                                     <label for="object">Sujet</label>
                                     <input required type="text" name="object">
 
                                     <label for="message">Votre message</label>
-                                    <textarea required id="message" name="message" placeholder="Votre message.." style="width : 90%; height:100px"></textarea>
+                                    <textarea required id="message" name="message" placeholder="Votre message.."
+                                        style="width : 90%; height:100px"></textarea>
 
-                                    <input  type="submit" value="Envoyer" class = "btn btn-primary" name = "suggestion">
-                                
-                            </form>                            
+                                    <input type="submit" value="Envoyer" class="btn btn-primary" name="suggestion">
+                                    <?php
+                                        if (isset($_REQUEST['suggestion']))  {
+    
+                                            //Email information
+                                            $admin_email = "contact@immotool.fr";
+                                            $subject = $_POST['object'];
+                                            $message = $_POST['message'];
+                                            //send email
+                                                if(mail($admin_email, "Contact de Immotool : ".$subject,"Pseudo : ".$_SESSION['username']. " Message : ". $message)){
+
+                                                //Email response
+                                                echo "Votre message a été envoyé, merci !";
+                                                }
+                                            }
+                                    ?>
+
+                                </form>
+                            </div>
                         </div>
-                    </div>
 
 
 

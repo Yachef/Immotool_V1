@@ -4,6 +4,8 @@
 
 <head>
     <meta charset="UTF-8">
+  <title>Immotool - Votre conseiller immobilier 100% gratuit !</title>
+
     <!-- BOOTSTRAP -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
@@ -16,6 +18,7 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
         integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
 
+    <link rel="shortcut icon" href="../../docs/imgs/logo-IMMOTOOL.png" type="image/x-icon" /> <!-- Favicon /-->
 
     <!-- FONTS  -->
     <link href="https://fonts.googleapis.com/css?family=Fira+Sans" rel="stylesheet">
@@ -56,7 +59,7 @@
                         <div class="col-md-6 content-wrapper">
                         <div class="suggestion-form content-container">
                             <div class = "content-title"><h1>A venir !</h1></div>                            
-                            <h4>Vous trouverez prochainement dans cette section un outil vous permettant de :</h4>
+                            <h4>Vous trouverez prochainement dans cette section :</h4>
                             <h5> - Une ToDo List pour ne rien oublier lorsque vous réaliserez vos visites !</h5>
                             <h5> - Un outil de comparaison de vos visites pour vous aider dans vos choix !</h5>
                         </div>

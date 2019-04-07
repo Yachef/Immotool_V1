@@ -9,6 +9,53 @@
 		border-color: #1A164B;
 }
 
+/* POPUP */
+#popup{
+	z-index: 1;
+	padding-left: 5%;
+	padding-right: 5%;
+	text-align: center;
+	right: 0px;
+	position: fixed;
+	top: 70px;
+	display: float;
+	text-align: center;
+}
+
+#popup .inside-popup{
+	background: white;
+    display: inline-block;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+#popup .input-group {
+  display: block;
+  margin-top: 10px;
+  display: block;
+  width: 50%;
+  left: 25%;
+  right: 25%;
+}
+#popup .input-group label {
+  display: block;
+  text-align: left;
+  margin-top: 3px;
+}
+#popup .input-group input {
+  height: 70px;
+  width: 93%;
+  padding: 5px 10px;
+  font-size: 16px;
+  border-radius: 5px;
+  border: 1px solid gray;
+}
+
+#popup .input-group button{
+	color: white;
+	margin:0 auto;
+}
+
 ::-webkit-input-placeholder { /* Chrome/Opera/Safari */
     color: pink;
     

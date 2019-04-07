@@ -64,7 +64,7 @@
 							<input type="email" class="input" name="email" value="<?php echo $email; ?>">
 						</div>
 						<div class="group">
-							<input id="check2" type="checkbox" class="check" checked>
+							<input id="check2" type="checkbox" class="check" checked required>
 							<label for="check"><span class="icon"></span> J'accepte les <a href = "cgu.php">CGU</a></label>
 						</div>
 						<div class="group">

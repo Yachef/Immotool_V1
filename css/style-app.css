@@ -48,6 +48,7 @@ input{
 
 /* WHITE BAND */
 #white-band{
+    z-index: 1;
     display: flex;
     position: fixed;
     /* right:0px; */
@@ -156,6 +157,7 @@ input{
 
 /* INSIDE CONTENT */
 #inside-content{
+    z-index: 2;
     display: block;
     top:100px;
     margin-top: 80px;
@@ -178,8 +180,8 @@ input{
 }
 
 .content-container{
-    /* display: inline-block; */
-    margin : 0 auto;
+     /*display: inline-block; */
+    margin : 20px auto 0 auto;
     padding: 20px;
     background-color: white;
     border-radius: .5rem;
@@ -247,9 +249,11 @@ input{
     font-size: 150px;
     color: #0E0C28;
 }
-
+.agent-form{
+    text-align: center;
+}
 .agent-form input{
-    margin:0;
+    margin:0 auto;
 }
 
 /* MES VISITES */

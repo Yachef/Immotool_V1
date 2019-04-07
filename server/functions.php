@@ -127,30 +127,30 @@ function saveData(){
   
 };
 function resetData(){
-  $_SESSION['surface'] ="";
-  $_SESSION['prix'] = "";
-  $_SESSION['travaux'] = "";
-  $_SESSION['fraisDossiers'] = "";
-  $_SESSION['mobilier'] = "";
+  unset($_SESSION['surface']);
+  unset($_SESSION['prix']);
+  unset($_SESSION['travaux']);
+  unset($_SESSION['fraisDossiers']);
+  unset($_SESSION['mobilier']);
 
-  $_SESSION['apport'] = "";
-  $_SESSION['assuranceCredit'] = "";
-  $_SESSION['taux'] ="";
-  $_SESSION['dureeEmprunt'] = "";
+  unset($_SESSION['apport']);
+  unset($_SESSION['assuranceCredit']);
+  unset($_SESSION['taux']);
+  unset($_SESSION['dureeEmprunt']);
 
   $_SESSION['revenus'] ="";
   // $_SESSION['partsFiscales'] = $_POST['partsFiscales'];
-  $_SESSION['loyer'] = "";
-  $_SESSION['vacances'] ="";
-  $_SESSION['autresRecettes']= "";
+  unset($_SESSION['loyer']);
+  unset($_SESSION['vacances']);
 
-  $_SESSION['taxeFonciere'] ="";
-  $_SESSION['reparations'] = "";
-  $_SESSION['chargesCopro'] = "";
+  unset($_SESSION['autresRecettes']);
+  unset($_SESSION['taxeFonciere']);
+  unset($_SESSION['reparations']);
+  unset($_SESSION['chargesCopro']);
 
-  $_SESSION['situationMaritale'] = "";
-  $_SESSION['personnesCharge'] = "";
-  $_SESSION['ville'] = "";
+  unset($_SESSION['situationMaritale']);
+  unset($_SESSION['personnesCharge']);
+  unset($_SESSION['ville']);
   
 }
 function connectToDB(){
@@ -400,5 +400,16 @@ function colorNumber($number){
   }else{
     return "red";
   }
+}
+
+function genererChaineAleatoire($longueur){
+ $caracteres = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+ $longueurMax = strlen($caracteres);
+ $chaineAleatoire = '';
+ for ($i = 0; $i < $longueur; $i++)
+ {
+ $chaineAleatoire .= $caracteres[rand(0, $longueurMax - 1)];
+ }
+ return $chaineAleatoire;
 }
 ?>

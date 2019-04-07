@@ -2,34 +2,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="UTF-8">
-  <title>Immotool - Votre conseiller immobilier 100% gratuit !</title>
-
-    <!-- BOOTSTRAP -->
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
-    <!-- jQuery library -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <!-- Latest compiled JavaScript -->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
-
-    <!-- FONT AWESOME -->
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-
-  <link rel="shortcut icon" href="../../docs/imgs/logo-IMMOTOOL.png" type="image/x-icon" /> <!-- Favicon /-->     
-
-    <!-- FONTS  -->
-    <link href="https://fonts.googleapis.com/css?family=Fira+Sans" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet">
-
-    <!-- CSS -->
-    <link rel="stylesheet" href="../../css/style-app.css">
-    <link rel="stylesheet" href="../../css/style-results.css">
-
-    <!-- JS -->
-    <script src = "../../js/utils.js"></script>
-    <script src = "../../js/script-app.js"></script>
+<?php require_once('head.php');?>
 </head>
 
 <body>
@@ -81,7 +54,7 @@
                                 <h2 class ="number-result <?php echo colorNumber($_SESSION['cashflowR'])?>"><?php echo round($_SESSION['cashflowR'],2)."€" ?></h2>
                                 <h2>Imp&ocirc;ts Fonciers <span class ="firstYear">(1ère année)</span></h2>
                                 <h2 class ="number-result <?php echo colorNumber($_SESSION['impotsFoncierR'])?>"><?php echo round($_SESSION['impotsFoncierR'],2)."€" ?></h2>
-                                <a href="reel.php" target = "_blank"><h3 class = "details">Voir les détails</h3></a>
+                                <a href="reel.php"><h3 class = "details">Voir les détails</h3></a>
                             </div>
                         </div>
 
@@ -93,7 +66,7 @@
                                 <h2 class ="number-result <?php echo colorNumber($_SESSION['cashflowmF'])?>"><?php echo round($_SESSION['cashflowmF'],2)."€" ?></h2>
                                 <h2>Imp&ocirc;ts Fonciers <span class ="firstYear">(1ère année)</span></h2>
                                 <h2 class ="number-result <?php echo colorNumber($_SESSION['impotsFonciermF'])?>"><?php echo round($_SESSION['impotsFonciermF'],2)."€" ?></h2>
-                                <a href="microFoncier.php" target="_blank"><h3 class = "details">Voir les détails</h3></a>
+                                <a href="microFoncier.php"><h3 class = "details">Voir les détails</h3></a>
                                 <?php else: ?>
                                 <h2 style = "color:red;">Le régime ne s'applique pas !</h2>
                                 <p>(Recettes locatives annuelles > 15000€)</p>
@@ -114,7 +87,7 @@
                                 <h2 class ="number-result <?php echo colorNumber($_SESSION['cashflowBIC'])?>"><?php echo round($_SESSION['cashflowBIC'],2)."€" ?></h2>
                                 <h2>Imp&ocirc;ts Fonciers <span class ="firstYear">(1ère année)</span></h2>
                                 <h2 class ="number-result <?php echo colorNumber($_SESSION['impotsFoncierBIC'])?>"><?php echo round($_SESSION['impotsFoncierBIC'],2)."€" ?></h2>
-                                <a href="reel_LMNP.php" target = "_blank"><h3 class = "details">Voir les détails</h3></a>
+                                <a href="reel_LMNP.php"><h3 class = "details">Voir les détails</h3></a>
 
                             </div>
                         </div>
@@ -127,7 +100,7 @@
                                 <h2 class ="number-result <?php echo colorNumber($_SESSION['cashflowLMNPm'])?>"><?php echo round($_SESSION['cashflowLMNPm'],2)."€" ?></h2>
                                 <h2>Impôts Fonciers <span class ="firstYear">(1ère année)</span></h2>
                                 <h2 class ="number-result <?php echo colorNumber($_SESSION['impotsFoncierLMNPm'])?>"><?php echo round($_SESSION['impotsFoncierLMNPm'],2)."€" ?></h2>
-                                <a href="microBIC.php" target="_blank"><h3 class = "details">Voir les détails</h3></a>
+                                <a href="microBIC.php"><h3 class = "details">Voir les détails</h3></a>
                                 <?php else: ?>
                                 <h2 style = "color:red;">Le régime ne s'applique pas !</h2>
                                 <p>(Recettes locatives annuelles > 32900€)</p>

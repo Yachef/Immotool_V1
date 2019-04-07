@@ -4,6 +4,7 @@ require_once('calcul.php');
 session_start();
 $username = "";
 $email    = "";
+$_SESSION['popup'] = false;
 $errors = array();
 $prelevementsSociaux = 0.172;
 
@@ -50,9 +51,11 @@ if (isset($_REQUEST['reg_user'])) { ///isset($_REQUEST['reg_user'])
     mysqli_query($GLOBALS['db'], $query);
   	$_SESSION['username'] = $username;
     $_SESSION['connected']="connected";
-  	$_SESSION['success'] = "You are now logged in";
-    $_SESSION['connected'] = "yes";
+    if(isset($_SESSION['surface'])){ // CELA SIGNIFIE QUE LA PERSONNE S'EST INSCRITE VIA POPUP
+    header('location:../app/result-simulateur.php');
+    }else{
   	header('location:../app/app.php');
+    }
   }
   mysqli_close($GLOBALS["db"]);
 }
@@ -81,8 +84,8 @@ if (isset($_REQUEST['login_user']) or isset($_REQUEST['login_user_via_popup'])) 
       if(isset($_REQUEST['login_user'])){
         header('location:../app/app.php');
       }else if(isset($_REQUEST['login_user_via_popup'])){
-        header('location:result.php');
-        $popup = false;
+        header('location:result-simulateur.php');
+        $_SESSION['popup'] = false;
       }
   	}else {
   		array_push($errors, "Wrong username/password combination");
@@ -91,21 +94,4 @@ if (isset($_REQUEST['login_user']) or isset($_REQUEST['login_user_via_popup'])) 
   mysqli_close($GLOBALS["db"]);
 }
 
-// SI FORMULAIRE SIMULATION BIEN REMPLI
-if(isset($_REQUEST['simulation'])){
-  storeToDB($_SESSION['username'],$_POST['ville'],$_POST['surface'],$_POST['prix']);
-  saveData();
-  calcul();
-
-//   if(isset($_SESSION['connected'])){ // Bien
-//   header('http://immotool.fr/public/app/simulateur.php#');
-//   }
-}
-
-if(isset($_REQUEST['deleteData'])){
-  resetData();
-}
-
-
- 
 ?>

@@ -63,13 +63,6 @@ function microFoncier(){
 }
 
 function reel(){
-    /* REGIME REEL */
-    // $_SESSION['recettesMoinsCharges'] = $_SESSION['totalRecettesAnuelles'] - $_SESSION['interetEmprunt1ereAnnee'];
-    // $_SESSION['recettesMoinsChargesDontTravaux'] = $_SESSION['recettesMoinsCharges'] - $_SESSION['travaux'] - $_SESSION['totalChargesAnnuelles'];
-    // $_SESSION['deficitFoncierR'] = ($_SESSION['recettesMoinsChargesDontTravaux'] < 0) ?  - $_SESSION['recettesMoinsChargesDontTravaux'] : 0;
-    // $_SESSION['revenusFonciersImposablesR'] = $_SESSION['recettesMoinsChargesDontTravaux']>0 ? $_SESSION['recettesMoinsChargesDontTravaux'] : 0;
-    // $_SESSION['revenuGlobalR'] = $_SESSION['revenus']*0.9 +$_SESSION['revenusFonciersImposablesR'];
-    // $_SESSION['newTMIR'] = TMI($_SESSION['revenuGlobalR']);
     $_SESSION['tabimpotsFoncierR'] = tabImpotsFonciersR($_SESSION['travaux'],$_SESSION['revenus'],$_SESSION['totalChargesAnnuelles'],$_SESSION['tabInteretEmprunt'],$_SESSION['totalRecettesAnuelles'],$_SESSION['personnesCharge'],$_SESSION['situationMaritale']);
     $_SESSION['impotsFoncierR'] = $_SESSION['tabimpotsFoncierR'][0];
     $_SESSION['regimeReel'] = ( $_SESSION['totalRecettesAnuelles'] - $_SESSION['totalChargesAnnuelles'] - $_SESSION['impotsFoncierR'] ) / $_SESSION['totalCoutAchat'];
@@ -102,7 +95,7 @@ function microBic(){
 function reel_LMNP(){
     $_SESSION['tabimpotsFoncierBIC'] = tabimpotsFonciersBIC($_SESSION['mobilier'],$_SESSION['prix'],$_SESSION['travaux'],$_SESSION['fraisNotaire'],$_SESSION['revenus'],$_SESSION['totalChargesAnnuelles'],$_SESSION['tabInteretEmprunt'],$_SESSION['totalRecettesAnuelles'],$_SESSION['personnesCharge'],$_SESSION['situationMaritale']);
     $_SESSION['impotsFoncierBIC'] = $_SESSION['tabimpotsFoncierBIC'][0];
-    $_SESSION['tabAmortissement'] = tabAmortissement($_SESSION['mobilier'],$_SESSION['prixAchat'],$_SESSION['travaux'],$_SESSION['fraisNotaire']);
+    $_SESSION['tabAmortissement'] = tabAmortissement($_SESSION['mobilier'],$_SESSION['prix'],$_SESSION['travaux'],$_SESSION['fraisNotaire']);
     $_SESSION['regimeBIC'] = ( $_SESSION['totalRecettesAnuelles'] - $_SESSION['totalChargesAnnuelles'] - $_SESSION['impotsFoncierBIC'] ) / $_SESSION['totalCoutAchat'];
     $_SESSION['tabcashflowBIC'] = cashFlow($_SESSION['totalRecettesAnuelles'],$_SESSION['mensualitesTotales'],$_SESSION['totalChargesAnnuelles'],$_SESSION['tabimpotsFoncierBIC']);
     $_SESSION['cashflowBIC'] = $_SESSION['tabcashflowBIC'][0];

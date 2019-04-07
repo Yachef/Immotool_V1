@@ -7,6 +7,7 @@ function toggleMenu(){
         $("#white-band").css("left", "0");
         $("#white-band").css("width", "100%");
         $("#inside-content").css("margin-left",0+"px");
+        $("#popup").css("left",0+"px");
         $("#inside-content").css("padding-left","5%");
         $("#inside-content").css("padding-right","5%");    
         menuClosed = 1;
@@ -17,6 +18,7 @@ function toggleMenu(){
         $("#white-band").css("width", whiteBandWidth);
         $("#white-band").css("left", $("#navigation-bar").width() + 1+"px");
         $("#inside-content").css("margin-left",$("#navigation-bar").width()+"px");
+        $('#popup').css("left",$("#navigation-bar").width()+"px");
         $("#inside-content").css("padding-left","5%");
         $("#inside-content").css("padding-right","5%");    
         menuClosed = 0;
@@ -30,6 +32,7 @@ function autoResizing(){
     whiteBandWidth = $(window).width() - $("#navigation-bar").width() -1 + "px";
     $("#white-band").css("width", whiteBandWidth);
     $("#inside-content").css("margin-left",$("#navigation-bar").width()+"px");
+    $('#popup').css("left",$("#navigation-bar").width()+"px");
     $("#inside-content").css("padding-left","5%");
     $("#inside-content").css("padding-right","5%");
     if(($(window).width()<960 && menuClosed ==0) || ($(window).width()>960 && menuClosed == 1)){   

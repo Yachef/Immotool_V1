@@ -52,9 +52,9 @@ if (isset($_REQUEST['reg_user'])) { ///isset($_REQUEST['reg_user'])
   	$_SESSION['username'] = $username;
     $_SESSION['connected']="connected";
     if(isset($_SESSION['surface'])){ // CELA SIGNIFIE QUE LA PERSONNE S'EST INSCRITE VIA POPUP
-    header('location:../app/result-simulateur.php');
+    header('location:../app/results/result-simulateur.php');
     }else{
-  	header('location:../app/app.php');
+  	header('location:../app/features/home.php');
     }
   }
   mysqli_close($GLOBALS["db"]);
@@ -82,9 +82,8 @@ if (isset($_REQUEST['login_user']) or isset($_REQUEST['login_user_via_popup'])) 
       $_SESSION['connected']="connected";
       $_SESSION['success'] = "You are now logged in";
       if(isset($_REQUEST['login_user'])){
-        header('location:../app/app.php');
+        header('location:../app/features/home.php');
       }else if(isset($_REQUEST['login_user_via_popup'])){
-        header('location:result-simulateur.php');
         $_SESSION['popup'] = false;
       }
   	}else {
@@ -93,5 +92,22 @@ if (isset($_REQUEST['login_user']) or isset($_REQUEST['login_user_via_popup'])) 
   }
   mysqli_close($GLOBALS["db"]);
 }
+// SIMULATEUR
 
+  // EFFACER LES CHAMPS
+if(isset($_REQUEST['deleteData'])){
+  resetData();
+  header('location: simulateur.php');
+}
+  //REDIRECTIONS
+if(isset($_REQUEST['simulation'])){
+    saveData();
+    $errors = gestionErreurSaisie($_POST);
+    if(count($errors) == 0){
+      calcul();
+          storeToDB($_SESSION['username']||"unregistered","unknown",$_POST['surface'],$_POST['prix']);
+          header('Location: ../results/result-simulateur.php');
+          unset($_REQUEST['simulation']);
+    }
+}
 ?>

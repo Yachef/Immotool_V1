@@ -1,15 +1,15 @@
-<?php require_once('../../server/server.php');?>
+<?php require_once('../../../erver/server.php');?>
 <!DOCTYPE html>
 <html>
 <head>
-<?php require_once('head.php');?>
+<?php require_once('../base/head.php');?>
 </head>
 
 <body>
     
     <section id ="content" class = "container-fluid">
         <div class="row">
-        <?php require("header.php"); ?>
+        <?php require("../base/header.php"); ?>
 
             <section id = "inside-content">
 
@@ -29,14 +29,16 @@
 
                     <section id = "rendement" class = "col-md-6 content-wrapper">
                         <div class = "content-container">
-                            <div class = "content-title"><h1>Régime Réel simplifié (location meublée)</h1></div>
+                            <div class = "content-title"><h1>Régime Micro Foncier (location nue)</h1></div>
                             <div class = "centerize">
                                 <h2>Rendement Net Net <span class ="firstYear">(1ère année)</span></h2>
-                                <h2 class ="number-result"><?php echo round($_SESSION['rendementNetNetBIC']*100,2)."%" ?></h2>
+                                <h2 class ="number-result"><?php echo round($_SESSION['rendementNetNetmF']*100,2)."%" ?></h2>
                                 <h2>Cash Flow Net Net / mois <span class ="firstYear">(1ère année)</span></h2>
-                                <h2 class ="number-result <?php echo colorNumber($_SESSION['cashflowBIC'])?>"><?php echo round($_SESSION['cashflowBIC'],2)."€" ?></h2>
+                                <h2 class ="number-result <?php echo colorNumber($_SESSION['cashflowmF'])?>"><?php echo round($_SESSION['cashflowmF'],2)."€" ?></h2>
+                                <h2>Taux Marginal d'Imposition <span class ="firstYear">(1ère année)</span></h2>
+                                <h2 class ="number-result"><?php echo round($_SESSION['newTMImF']*100,2)."%" ?></h2>
                                 <h2>Impôts Fonciers <span class ="firstYear">(1ère année)</span></h2>
-                                <h2 class ="number-result"><?php echo round($_SESSION['tabimpotsFoncierBIC'][0],2)."€" ?></h2>
+                                <h2 class ="number-result"><?php echo round($_SESSION['tabImpotsFonciersmF'][0],2)."€" ?></h2>
                                 <h2>Mensualités Totales du crédit</h2>
                                 <h2 class ="number-result"><?php echo round($_SESSION['mensualitesTotales'],2)."€" ?></h2>
                             </div>
@@ -58,7 +60,6 @@
                                     <th class = "centerize" style = "width = 20%;">Rendement Net Net</th>
                                     <th class = "centerize" style = "width = 20%;">Cash Flow Net Net /mois</th>
                                     <th class = "centerize" style = "width = 20%;">Impôts Fonciers</th>
-                                    <th class = "centerize" style = "width = 20%;">Amortissement</th>                                    
                                 </tr>
                                 </thead>
                                 <tbody>
@@ -68,10 +69,9 @@
                                         while($i<30){
                                             echo "<tr>";
                                             echo "<td>".($i+1)."</td>";
-                                            echo "<td class =". colorNumber($_SESSION['tabRendementNetNetBIC'][$i]).">".round($_SESSION['tabRendementNetNetBIC'][$i]*100,2)."%"."</td>";
-                                            echo "<td class =". colorNumber($_SESSION['tabcashflowBIC'][$i]).">".round($_SESSION['tabcashflowBIC'][$i],2)."€"."</td>";
-                                            echo "<td>".round($_SESSION['tabimpotsFoncierBIC'][$i],2)."€"."</td>";
-                                            echo "<td>".round($_SESSION['tabAmortissement'][$i],2)."€"."</td>";
+                                            echo "<td class =". colorNumber($_SESSION['tabRendementNetNetmF'][$i]).">".round($_SESSION['tabRendementNetNetmF'][$i]*100,2)."%"."</td>";
+                                            echo "<td class =". colorNumber($_SESSION['tabcashflowmF'][$i]).">".round($_SESSION['tabcashflowmF'][$i],2)."€"."</td>";
+                                            echo "<td>".round($_SESSION['tabImpotsFonciersmF'][$i],2)."€"."</td>";
                                             echo "</tr>";
                                             $i++;
                                         }

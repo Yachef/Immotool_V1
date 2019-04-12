@@ -123,11 +123,11 @@
 
 <h3>1. Présentation du site.</h3>
 <p>En vertu de l'article 6 de la loi n° 2004-575 du 21 juin 2004 pour la confiance dans l'économie numérique, il est précisé aux utilisateurs du site <a href="http://www.immotool.com/">www.immotool.com</a> l'identité des différents intervenants dans le cadre de sa réalisation et de son suivi :</p>
-<p><strong>Propriétaire</strong> : Yacine Had – AE – 3, avenue Albert Einstein 69100 Villeurbanne<br />
-<strong>Créateur</strong>  : <a href="https://www.linkedin.com/in/yacine-hadjal-43b507153/">Yacine Had</a><br />
-<strong>Responsable publication</strong> : Yacine Had – yachef.h@gmail.com<br />
+<p><strong>Propriétaire</strong> : Yac Jimico – AE – 3, avenue Albert Einstein 69100 Villeurbanne<br />
+<strong>Créateur</strong>  : <a href="https://www.linkedin.com/in/yacine-hadjal-43b507153/">Yac Jimico</a><br />
+<strong>Responsable publication</strong> : Yac Jimico – contact@immotool.fr<br />
 Le responsable publication est une personne physique ou une personne morale.<br />
-<strong>Webmaster</strong> : Yacine Had – yachef.h@gmail.com<br />
+<strong>Webmaster</strong> : Yac Jimico – contact@immotool.fr<br />
 <strong>Hébergeur</strong> : LIGNE WEB SERVICES – 4 RUE GALVANI 75017 PARIS<br />
 Crédits : <br />
 Le modèle de mentions légales est offert par Subdelirium.com <a target="_blank" href="https://www.subdelirium.com/generateur-de-mentions-legales/" alt="Modèle de mentions légales">Modèle de mentions légales</a></p>

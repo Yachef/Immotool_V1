@@ -11,8 +11,8 @@ $( document ).ready(function() {
       });
 
     if($('#popup').length){
-        $('.content-wrapper, #navigation-bar, #white-band,.header-content').css('opacity',0.1);
-        $('.content-wrapper, #navigation-bar, #white-band').css('pointer-events','none');
+        $('.content-wrapper,.header-content').css('opacity',0.1);
+        $('.content-wrapper').css('pointer-events','none');
     }
 
     $('#img-account').click(toggleAccountBar);

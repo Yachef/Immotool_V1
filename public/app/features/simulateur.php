@@ -1,55 +1,20 @@
-<?php require('../../server/server.php');
-if(isset($_REQUEST['deleteData'])){
-resetData();
-header('location: simulateur.php');
-}
-if(isset($_REQUEST['simulation'])){
-    saveData();
-    calcul();
-    if(isset($_SESSION['connected'])){ // Bien
-        storeToDB($_SESSION['username'],$_POST['ville'],$_POST['surface'],$_POST['prix']);
-        header('Location: result-simulateur.php');
-        unset($_REQUEST['simulation']);
-    }else{
-        $_SESSION['popup'] = true;
-    }
-}
+<?php require('../../../server/server.php');
+
 ?>
 <!DOCTYPE html>
 <html>
     <head>
-        <?php require_once('head.php');?>
+        <?php require_once('../base/head.php');?>
     </head>
     <body>
         <section id="content" class="container-fluid">
             <div class="row">
-                <?php require("header.php"); ?>
+                <?php require("../base/header.php"); ?>
                 <section id="inside-content">
-                    <?php if($_SESSION['popup']) : ?>
-                    <section id = "popup">
-                        <div class = "inside-popup">
-                        <h1>Connectez-vous pour voir les résultats !</h1>
-                        <form method="post">
-                            <?php //include('errors.php'); ?>
-                            <div class="input-group">
-                                <label><h2>Identifiant</h2></label>
-                                <input type="text" name="username" >
-                            </div>
-                            <div class="input-group">
-                                <label><h2>Mot de passe</h2></label>
-                                <input type="password" name="password">
-                            </div>
-                            <div class="input-group">
-                                <button type="submit" class="btn btn-lg" name="login_user_via_popup">Connexion</button>
-                            </div>
-                            <p>
-                                Pas encore inscrit ? <a href="../site/register.php?login=1">S'inscrire</a>
-                            </p>
-                        </form>
-                        </div>
-                    </section>
-                    <?php echo "<script>console.log(".$_SESSION['surface'].");</script><br>"?>
-                    <?php endif ?>
+                    <?php if($_SESSION['popup']){
+                        require_once("../base/popup.php");
+                    }
+                     ?>
                     <div class="row">
                         <div class="header-content">
                             <div class="title">
@@ -61,6 +26,7 @@ if(isset($_REQUEST['simulation'])){
                         </div>
                         <section id="form" class="content-wrapper">
                             <form class="content-container" method="post">
+                                <?php require('../../../server/errors.php');?>
                                 <div id="fraisdachat" class="form-container">
                                     <div>
                                         <button style="float:right;display:inline-block;"
@@ -72,7 +38,7 @@ if(isset($_REQUEST['simulation'])){
                                         class="fas fa-question-circle element-info" href="#" target=_blank>
                                         <div class="infobulle">Surface totale du bien en m²</div>
                                     </div></label>
-                                    <input type="number" name="surface" placeholder="100" required
+                                    <input type="number" name="surface" placeholder="100"
                                     value="<?php if(isset($_SESSION['surface'])){echo $_SESSION['surface'];} ?>"> m²
                                     <br>
                                     <label for="prix">Prix du bien (frais d'agence inclus) <div
@@ -100,12 +66,12 @@ if(isset($_REQUEST['simulation'])){
                                     </div></label>
                                     <input type="number" name="mobilier" placeholder="2000" required
                                     value=<?php if(isset($_SESSION['mobilier'])){echo $_SESSION['mobilier'];}  ?>> €<br>
-                                    <label for="ville">Ville du bien <div class="fas fa-question-circle element-info"
+                                    <!-- <label for="ville">Ville du bien <div class="fas fa-question-circle element-info"
                                         href="#" target=_blank>
                                         <div class="infobulle">Ville du bien que vous simulez</div>
                                     </div></label>
                                     <input type="text" required name="ville" placeholder="Paris"
-                                    value=<?php if(isset($_SESSION['ville'])){echo $_SESSION['ville'];}  ?>><br>
+                                    value=<?php // if(isset($_SESSION['ville'])){echo $_SESSION['ville'];}  ?>><br> -->
                                 </div>
                                 <div id="emprunt" class="form-container">
                                     <h2>Emprunt Bancaire</h2>

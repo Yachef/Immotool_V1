@@ -1,15 +1,15 @@
-<?php require_once('../../server/server.php');?>
+<?php require_once('../../../server/server.php');?>
 <!DOCTYPE html>
 <html>
 <head>
-<?php require_once('head.php');?>
+<?php require_once('../base/head.php');?>
 </head>
 
 <body>
     
     <section id ="content" class = "container-fluid">
         <div class="row">
-        <?php require("header.php"); ?>
+        <?php require("../base/header.php"); ?>
             <section id = "inside-content">
 
                 <div class="row">
@@ -17,7 +17,7 @@
                     <div class = "header-content">
                         <div class="title">
                             <h1 id="title">Resultats</h1>
-                            <div class = "return"><a href = "simulateur.php"><h2>Revenir au simulateur</h2></a></div>
+                            <div class = "return"><a href = "../features/simulateur.php"><h2>Revenir au simulateur</h2></a></div>
                         </div>
                        <div class = "divider"><hr></div>
                     </div>

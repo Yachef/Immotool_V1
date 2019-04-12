@@ -100,7 +100,7 @@
 		          
 		          <div class="space"></div>
 		          
-		          <a href="site/register.php?login=1" class="button-white">Commencer</a> 
+		          <a href="app/features/home.php" class="button-white">Commencer</a> 
 		  	  
 		  	    </div>
 		  	  
@@ -144,7 +144,7 @@
 
 					<div class="space"></div>
 					
-					<a  class="button-blue" href = "site/register.php?login=1">S'inscrire</a> 
+					<a  class="button-blue" href = "app/features/simulateur.php">Accéder au simulateur</a> 
 					
 				
 				</div>
@@ -194,7 +194,7 @@
 					
 					<div class="space"></div>
 					
-					<a class="js-open-modal button-green" href ="site/register.php?login=1">Commencer gratuitement !</a> 
+					<a class="js-open-modal button-green" href ="app/features/home.php">Commencer gratuitement !</a> 
 				
 				</div>
 				

@@ -1,16 +1,16 @@
-<?php require_once('../../server/server.php');?>
+<?php require_once('../../../server/server.php');?>
 <!DOCTYPE html>
 <html>
 
 <head>
-<?php require_once('head.php');?>
+<?php require_once('../base/head.php');?>
 </head>
 
 <body>
 
     <section id="content" class="container-fluid">
         <div class="row">
-            <?php require("header.php"); ?>
+            <?php require("../base/header.php"); ?>
 
 
             <section id="inside-content">
@@ -132,7 +132,7 @@
                                 <h1>Mes Visites</h1>
                             </div>
                             <h4>A venir !</h4>
-                            <img class="img-fluid" src="../../docs/imgs/visite-appartement.jpg"
+                            <img class="img-fluid" src="../../../docs/imgs/visite-appartement.jpg"
                                 alt="outil-visite-appartement">
                         </div>
                     </div>

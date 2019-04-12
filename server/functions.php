@@ -1,5 +1,5 @@
 <?php
-require_once('server.php');
+// require_once('server.php');
 
 function console_log( $data ){
     echo '<script>';
@@ -123,7 +123,7 @@ function saveData(){
 
     $_SESSION['situationMaritale'] = $_POST['situationMaritale'];
     $_SESSION['personnesCharge'] = $_POST['personnesCharge'];
-    $_SESSION['ville'] = $_POST['ville'];
+    // $_SESSION['ville'] = $_POST['ville'];
   
 };
 function resetData(){
@@ -150,13 +150,13 @@ function resetData(){
 
   unset($_SESSION['situationMaritale']);
   unset($_SESSION['personnesCharge']);
-  unset($_SESSION['ville']);
+  // unset($_SESSION['ville']);
   
 }
 function connectToDB(){
   try{
-    // $GLOBALS["db"] = mysqli_connect('localhost', 'yachef', 'yacleboss', 'calculermoncashflow',3306);
-    $GLOBALS["db"] = mysqli_connect("db5000036975.hosting-data.io","dbu73555","F8ma9surnz2y!","dbs31976",3306);
+    $GLOBALS["db"] = mysqli_connect('localhost', 'yachef', 'yacleboss', 'calculermoncashflow',3306);
+    // $GLOBALS["db"] = mysqli_connect("db5000036975.hosting-data.io","dbu73555","F8ma9surnz2y!","dbs31976",3306);
   }
   catch(Exception $e){
     echo "Problème de connexion à la DB :".$e;
@@ -411,5 +411,19 @@ function genererChaineAleatoire($longueur){
  $chaineAleatoire .= $caracteres[rand(0, $longueurMax - 1)];
  }
  return $chaineAleatoire;
+}
+
+function gestionErreurSaisie($post){
+  $final_message = array();
+  foreach($post as $key => $value){
+    if(empty($value)){
+      if($value != $_POST['simulation']){
+        $message = "Hey you forgot to fill this field: $key";
+        array_push($final_message, $message);
+      }
+    }
+  }
+  return $final_message;
+  // return "test";
 }
 ?>

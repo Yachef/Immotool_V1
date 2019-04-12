@@ -73,35 +73,11 @@
 					</form>
 					<div class="hr"></div>
 					<div class="foot-lnk">
-						<a href="register.php?login=1">Deja Membre ?</a>
+						<a href="register.php">Deja Membre ?</a>
 					</div>
 				</div>
 			</div>
 		</div>
 	</div>
 </body>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 </html>

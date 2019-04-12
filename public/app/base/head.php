@@ -23,7 +23,7 @@
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
     integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
 
-<link rel="shortcut icon" href="../../docs/imgs/logo-IMMOTOOL.png" type="image/x-icon" /> <!-- Favicon /-->
+<link rel="shortcut icon" href="../../../docs/imgs/logo-IMMOTOOL.png" type="image/x-icon" /> <!-- Favicon /-->
 
 
 <!-- FONTS  -->
@@ -33,11 +33,11 @@
 
 
 <!-- CSS -->
-<link rel="stylesheet" href="../../css/style-app.css">
-<link rel="stylesheet" href="../../css/style-simulateur.css">
-<link rel="stylesheet" href="../../css/style-results.css">
+<link rel="stylesheet" href="../../../css/style-app.css">
+<link rel="stylesheet" href="../../../css/style-simulateur.css">
+<link rel="stylesheet" href="../../../css/style-results.css">
 
 
 <!-- JS -->
-<script src="../../js/utils.js"></script>
-<script src="../../js/script-app.js"></script>
+<script src="../../../js/utils.js"></script>
+<script src="../../../js/script-app.js"></script>

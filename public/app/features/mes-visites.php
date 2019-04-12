@@ -1,9 +1,14 @@
-<?php require_once('../../server/server.php');?>
+<?php 
+require_once('../../../server/server.php');
+if(!isset($_SESSION['connected'])){
+        $_SESSION['popup'] = true;
+}
+?>
 <!DOCTYPE html>
 <html>
 
 <head>
-<?php require_once('head.php');?>
+<?php require_once('../base/head.php');?>
 
 </head>
 
@@ -11,10 +16,13 @@
 
     <section id="content" class="container-fluid">
         <div class="row">
-            <?php require("header.php"); ?>
+            <?php require("../base/header.php"); ?>
 
             <section id="inside-content">
-
+                <?php if($_SESSION['popup']){
+                        require_once("../base/popup.php");
+                    }
+                ?>
                 <div class="row">
 
                     <div class="header-content">

@@ -1,5 +1,4 @@
 <?php
-// require_once('server.php');
 
 function console_log( $data ){
     echo '<script>';
@@ -100,46 +99,47 @@ function CUMIPMT($rate, $periods, $value, $start, $end, $type) {
 };
 
 function saveData(){
-    $_SESSION['surface'] = $_POST['surface'];
-    $_SESSION['prix'] = $_POST['prix'];
-    $_SESSION['travaux'] = $_POST['travaux'];
-    $_SESSION['fraisDossiers'] = $_POST['fraisDossiers'];
-    $_SESSION['mobilier'] = $_POST['mobilier'];
-  
-    $_SESSION['apport'] = $_POST['apport'];
+  $_SESSION['prix'] = $_POST['prix'];
+  $_SESSION['travaux'] = $_POST['travaux'];
+  $_SESSION['fraisNotaire'] = $_POST["fraisNotaire"];
+  $_SESSION['fraisDossiers'] = $_POST['fraisDossiers'];
+  if(!empty($_POST['mobilier'])){
+  $_SESSION['mobilier'] = $_POST['mobilier'];
+  }
+
+  $_SESSION['apport'] = $_POST['apport'];
+  $_SESSION['questionEmprunt'] = $_POST['questionEmprunt'];
+  if($_SESSION['questionEmprunt'] == "oui"){
     $_SESSION['assuranceCredit'] = $_POST['assuranceCredit']/100;
     $_SESSION['taux'] = $_POST['taux']/100;
     $_SESSION['dureeEmprunt'] = $_POST['dureeEmprunt'];
-  
-    $_SESSION['revenus'] = $_POST['revenus'];
-    // $_SESSION['partsFiscales'] = $_POST['partsFiscales'];
-    $_SESSION['loyer'] = $_POST['loyer'];
-    $_SESSION['vacances'] = $_POST['vacances']/100;
-    $_SESSION['autresRecettes']= $_POST['autresRecettes'];
-  
-    $_SESSION['taxeFonciere'] = $_POST['taxeFonciere'];
-    $_SESSION['reparations'] = $_POST['reparations'];
-    $_SESSION['chargesCopro'] = $_POST['chargesCopro'];
+  }
+  $_SESSION['revenus'] = $_POST['revenus'];
+  $_SESSION['loyer'] = $_POST['loyer'];
+  $_SESSION['vacances'] = $_POST['vacances']/100;
+  $_SESSION['autresRecettes']= $_POST['autresRecettes'];
 
-    $_SESSION['situationMaritale'] = $_POST['situationMaritale'];
-    $_SESSION['personnesCharge'] = $_POST['personnesCharge'];
-    // $_SESSION['ville'] = $_POST['ville'];
-  
+  $_SESSION['taxeFonciere'] = $_POST['taxeFonciere'];
+  $_SESSION['reparations'] = $_POST['reparations'];
+  $_SESSION['chargesCopro'] = $_POST['chargesCopro'];
+
+  $_SESSION['situationMaritale'] = $_POST['situationMaritale'];
+  $_SESSION['personnesCharge'] = $_POST['personnesCharge'];
 };
 function resetData(){
-  unset($_SESSION['surface']);
   unset($_SESSION['prix']);
+  unset($_SESSION['fraisNotaire']);
   unset($_SESSION['travaux']);
   unset($_SESSION['fraisDossiers']);
   unset($_SESSION['mobilier']);
 
   unset($_SESSION['apport']);
+  unset($_SESSION['questionEmprunt']);
   unset($_SESSION['assuranceCredit']);
   unset($_SESSION['taux']);
   unset($_SESSION['dureeEmprunt']);
 
   $_SESSION['revenus'] ="";
-  // $_SESSION['partsFiscales'] = $_POST['partsFiscales'];
   unset($_SESSION['loyer']);
   unset($_SESSION['vacances']);
 
@@ -150,7 +150,6 @@ function resetData(){
 
   unset($_SESSION['situationMaritale']);
   unset($_SESSION['personnesCharge']);
-  // unset($_SESSION['ville']);
   
 }
 function connectToDB(){
@@ -168,10 +167,6 @@ function storeToDB($username,$ville,$surface,$prix){
   mysqli_query($GLOBALS['db'], $query);
   mysqli_close($GLOBALS["db"]);
 }
-
-// function resetData(){
-//   $_SESSION['loyer'] = $_SESSION['surface'] = $_SESSION['prix'] = $_SESSION['travaux'] = $_SESSION['fraisDossiers'] = $_SESSION['mobilier'] = $_SESSION['apport'] = $_SESSION['taux'] = $_SESSION['dureeEmprunt'] = $_SESSION['assuranceCredit'] = $_SESSION['revenus'] = $_SESSION['vacances'] = $_SESSION['autresRecettes'] = $_SESSION['taxeFonciere'] = $_SESSION['reparations'] = $_SESSION['chargesCopro'] = "yo";
-// };
 
 
 /* CALCUL DE l'IMPOT NET */
@@ -304,7 +299,6 @@ function tabImpotsFonciers($revenusFonciersImposables,$revenuGlobal,$personnesCh
 }
 
 function tabInteretEmprunt($taux,$dureeEmprunt,$montantPret){ // Retourne un tableau dont tab[i] représente l'intérêt d'emprunt à payer l'année i
-  // $_SESSION['interetEmprunt1ereAnnee'] = -CUMIPMT($_SESSION['taux']/12,$_SESSION['dureeEmprunt']*12,$_SESSION['montantPret'],1,12,0);
   $res = [];
   for($i = 0;$i<30;$i++){
     $res[$i] = -CUMIPMT($taux/12,$dureeEmprunt*12,$montantPret,($i*12)+1,($i+1)*12,0); 
@@ -335,11 +329,9 @@ function tabImpotsFonciersR($travaux,$revenus,$chargesAnnuelles,$tabInteretEmpru
 
 function tabAmortissement($mobilier,$prixAchat,$travaux,$fraisNotaire){
   for($i = 0; $i<10;$i++){
-    // $tabAmortissement[$i] = $mobilier/10 + $travaux/10 + 0.9*$prixAchat/25 +$fraisNotaire/25;
     $tabAmortissement[$i] = $mobilier/10 + $travaux/10 + 0.9*$prixAchat/30;
   }
   for($i = 10;$i<25;$i++){
-    // $tabAmortissement[$i] = 0.9*$prixAchat/25 +$fraisNotaire/25;
     $tabAmortissement[$i] = 0.9*$prixAchat/30;
   }
   for($i = 25;$i<30;$i++){
@@ -415,15 +407,20 @@ function genererChaineAleatoire($longueur){
 
 function gestionErreurSaisie($post){
   $final_message = array();
-  foreach($post as $key => $value){
-    if(empty($value)){
-      if($value != $_POST['simulation']){
-        $message = "Hey you forgot to fill this field: $key";
-        array_push($final_message, $message);
-      }
-    }
+
+  if($_POST['dureeEmprunt']> 30){
+    $message = "Durée d'emprunt invalide";
+    array_push($final_message, $message);
+  }
+  if(empty($_POST['mobilier'])){
+  $_SESSION['mobilier'] = 0;
+  }
+  $totalCoutAchat = $_POST['prix'] + $_POST['travaux'] + $_POST['fraisDossiers'] + $_POST['mobilier'] + $_POST['fraisNotaire'];
+  if($_POST['apport'] != $totalCoutAchat && $_POST["taux"] == 0){
+    $apport = $_POST['apport']; 
+    $message = "L'apport personnel ( $apport € ) n'est pas égale au côut total d'achat ( $totalCoutAchat € ), vous avez donc fait un crédit. Veuillez modifier le taux d'intérêt annuel'.";
+    array_push($final_message, $message);
   }
   return $final_message;
-  // return "test";
 }
 ?>

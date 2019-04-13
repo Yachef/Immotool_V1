@@ -4,7 +4,7 @@ require_once('functions.php');
 function calcul(){
 
     // FRAIS D'ACQUISITION
-    $_SESSION['fraisNotaire'] = calculFraisNotaire($_SESSION['prix']);
+    // $_SESSION['fraisNotaire'] = calculFraisNotaire($_SESSION['prix']);
     $_SESSION['totalCoutAchat'] = $_SESSION['prix'] + $_SESSION['travaux'] + $_SESSION['fraisDossiers'] + $_SESSION['mobilier'] + $_SESSION['fraisNotaire'];
   
     // RECETTES LOCATIVES
@@ -72,7 +72,7 @@ function reel(){
     $_SESSION['rendementNetNetR'] = $_SESSION["tabRendementNetNetR"][0];
 }
 
-  //LMNP
+//LMNP
 function microBic(){
   /* REGIME MICRO BIC LMNP */
   $_SESSION['LMNPm'] = ($_SESSION['totalRecettesAnuelles']<32900) ? true : false;

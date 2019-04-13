@@ -105,7 +105,7 @@ if(isset($_REQUEST['simulation'])){
     $errors = gestionErreurSaisie($_POST);
     if(count($errors) == 0){
       calcul();
-          storeToDB($_SESSION['username']||"unregistered","unknown",$_POST['surface'],$_POST['prix']);
+          // storeToDB($_SESSION['username']||"unregistered","unknown",$_POST['surface'],$_POST['prix']);
           header('Location: ../results/result-simulateur.php');
           unset($_REQUEST['simulation']);
     }

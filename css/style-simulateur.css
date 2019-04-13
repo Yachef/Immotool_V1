@@ -59,3 +59,7 @@
 .element-info:hover> .infobulle{
 	transform : scale(1) rotateX(0deg);
 }
+
+.hidden{
+	display: none;
+}

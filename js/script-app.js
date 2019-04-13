@@ -23,4 +23,14 @@ $( document ).ready(function() {
     //     this.value.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1 ')
     //   };
     // });
+
+    $("#questionEmprunt").change(function(){
+        if($("#questionEmprunt option:selected").val() == "oui"){
+            $("#faitEmprunt").removeClass("hidden");
+        }else{
+            if(!$("#faitEmprunt").hasClass("hidden")){
+                $("#faitEmprunt").addClass("hidden");
+            }
+        }
+    });
 });

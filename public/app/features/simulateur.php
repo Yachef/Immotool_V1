@@ -26,6 +26,9 @@
                         <section id="form" class="content-wrapper">
                             <form class="content-container" method="post">
                                 <?php require('../../../server/errors.php');?>
+
+
+
                                 <div id="fraisdachat" class="form-container">
                                     <div>
                                         <button style="float:right;display:inline-block;"
@@ -36,7 +39,7 @@
                                     
                                     <label for="prix">Prix du bien (frais d'agence inclus) <div
                                         class="fas fa-question-circle element-info" href="#" target=_blank>
-                                        <div class="infobulle">Prix du bien incluant les frais d'agence et de notaire</div>
+                                        <div class="infobulle">Prix du bien incluant les frais d'agence</div>
                                     </div></label>
                                     <input type="number" min=0 name="prix" placeholder="100 000" required
                                     value=<?php if(isset($_SESSION['prix'])){echo $_SESSION['prix'];} ?>> €<br>
@@ -55,21 +58,18 @@
                                     <input type="number" min=0 name="travaux" placeholder="3000" required
                                     value=<?php if(isset($_SESSION['travaux'])){echo $_SESSION['travaux'];} ?>> €<br>
                                     
-                                    <label for="fraisDossiers">Frais de dossier bancaires <div
-                                        class="fas fa-question-circle element-info" href="#" target=_blank>
-                                        <div class="infobulle">Frais de dossier lors de la demande de prêt. <a target = _blank href = "https://www.pretto.fr/pret-immobilier/frais-de-dossier/">Plus d'info</a></div>
-                                    </div></label>
-                                    <input type="number" min=0 name="fraisDossiers" placeholder="950" required
-                                    value=<?php if(isset($_SESSION['fraisDossiers'])){echo $_SESSION['fraisDossiers'];} ?>>
-                                    €<br>
+                                    
                                     
                                     <label for="mobilier">Prix du mobilier <span style = "color:red;">(si location meublée)</span> <div
                                     class="fas fa-question-circle element-info" href="#" target=_blank>
                                     <div class="infobulle">Canapé, cuisine, lits,armoires,...</div>
                                 </div></label>
                                 <input type="number" min=0 name="mobilier" placeholder="2000"
-                                value=<?php if(!empty($_POST['mobilier'])){echo $_SESSION['mobilier'];}  ?>> €<br>
+                                value=<?php if(isset($_SESSION['mobilier'])){echo $_SESSION['mobilier'];}  ?>> €<br>
                             </div>
+
+
+
                             <div id="emprunt" class="form-container">
                                 <h2>Emprunt Bancaire</h2>
                                 
@@ -92,26 +92,37 @@
                                         class="fas fa-question-circle element-info" href="#" target=_blank>
                                         <div class="infobulle">Taux d'intérêt de votre prêt immobilier <a href = "https://www.meilleurtaux.com/credit-immobilier/barometre-des-taux.html" target = _blank>Plus d'info</a></div>
                                     </div></label>
-                                    <input type="number" min=0 name="taux" placeholder="0.50" step="any" required
+                                    <input type="number" min=0 name="taux" placeholder="0.50" step="any" 
                                     value=<?php if(isset($_SESSION['taux'])){echo ($_SESSION['taux']*100);}  ?>> %<br>
                                     
                                     <label for="dureeEmprunt">Durée de l'emprunt (en années) <div
                                         class="fas fa-question-circle element-info" href="#" target=_blank>
                                         <div class="infobulle">Durée de remboursement de votre prêt bancaire</div>
                                     </div></label>
-                                    <input type="number" min=0 name="dureeEmprunt" placeholder="10" required
+                                    <input type="number" min=0 name="dureeEmprunt" placeholder="10"
                                     value=<?php if(isset($_SESSION['dureeEmprunt'])){echo $_SESSION['dureeEmprunt'];}  ?>>
                                     an<br>
-                                    
-                                    <label for="assuranceCredit">Taux d'assurance crédit <div
+
+                                    <label for="fraisDossiers">Frais de dossier <div
                                         class="fas fa-question-circle element-info" href="#" target=_blank>
-                                        <div class="infobulle">Taux d'assurance crédit de votre prêt immobilier <a href = "https://reassurez-moi.fr/guide/cout-assurance-pret-immobilier" target = _blank>Plus d'info</a></div>
+                                        <div class="infobulle">Frais de dossier lors de la demande de prêt. <a target = _blank href = "https://www.pretto.fr/pret-immobilier/frais-de-dossier/">Plus d'info</a></div>
                                     </div></label>
-                                    <input type="number" min=0 name="assuranceCredit" placeholder="0.77" required step="any"
+                                    <input type="number" min=0 name="fraisDossiers" placeholder="950"
+                                    value=<?php if(isset($_SESSION['fraisDossiers'])){echo $_SESSION['fraisDossiers'];} ?>>
+                                    €<br>
+                                    
+                                    <label for="assuranceCredit">Taux d'assurance du prêt <div
+                                        class="fas fa-question-circle element-info" href="#" target=_blank>
+                                        <div class="infobulle">Taux d'assurance de votre prêt immobilier (facultative) <a href = "https://reassurez-moi.fr/guide/cout-assurance-pret-immobilier" target = _blank>Plus d'info</a></div>
+                                    </div></label>
+                                    <input type="number" id = "assuranceCredit" min=0 name="assuranceCredit" placeholder="0.77" step="any"
                                     value=<?php if(isset($_SESSION['assuranceCredit'])){echo ($_SESSION['assuranceCredit']*100);} ?>>
                                     %<br>
                                 </div>
                             </div>
+
+
+
                             <div id="impots" class="form-container">
                                 <h2>Impôts</h2>
                                 
@@ -127,7 +138,7 @@
                                     <option value = "">Choisir</option>
                                     <option value="marie" <?php if(isset($_SESSION['situationMaritale']) && $_SESSION['situationMaritale'] == "marie") {echo " selected ";} ?>>Marié(e) ou Pacsé(e)</option>
                                     <option value="veuf" <?php if(isset($_SESSION['situationMaritale']) && $_SESSION['situationMaritale'] == "veuf") {echo " selected ";} ?>>Veuf(ve)</option>
-                                    <option value="seul" <?php if(isset($_SESSION['situationMaritale']) && $_SESSION['situationMaritale'] == "seul") {echo " selected ";} ?>>Seul</option>
+                                    <option value="seul" <?php if(isset($_SESSION['situationMaritale']) && $_SESSION['situationMaritale'] == "seul") {echo " selected ";} ?>>Seul(e)</option>
                                     <option value="concubin"<?php if(isset($_SESSION['situationMaritale']) && $_SESSION['situationMaritale'] == "concubin") {echo " selected ";} ?>>Concubin(e)</option>
                                 </select><br>
                                 
@@ -138,6 +149,9 @@
                                 <input type="number" min=0 name="personnesCharge" placeholder="1" required
                                 value=<?php if(isset($_SESSION['personnesCharge'])){echo $_SESSION['personnesCharge'];} ?>><br>
                             </div>
+
+
+
                             <div id="recettes" class="form-container">
                                 <h2>Recettes Locatives</h2>
                                 
@@ -163,6 +177,9 @@
                                 value=<?php if(isset($_SESSION['autresRecettes'])){echo $_SESSION['autresRecettes'];}  ?>>
                                 €<br>
                             </div>
+
+
+
                             <div id="charges" class="form-container">
                                 <h2>Charges</h2>
                                 
@@ -183,6 +200,64 @@
                                 <input type="number" min=0 name="chargesCopro" placeholder="1000" required
                                 value=<?php if(isset($_SESSION['chargesCopro'])){echo $_SESSION['chargesCopro'];}  ?>>
                                 €<br>
+
+                                <h2> Autres charges déductibles facultatives</h2>
+
+                                <label for="voirDetails">Voir les détails</label>
+                                <select id = "voirDetails" name="voirDetails">
+                                    <option <?php if(isset($_SESSION['questionEmprunt']) && $_SESSION['questionEmprunt'] == "oui"){echo " selected ";} ?>value="oui">Oui</option>
+                                    <option <?php if(!isset($_SESSION['questionEmprunt']) || $_SESSION['questionEmprunt'] != "oui"){echo " selected ";} ?> value="non">Non</option>
+                                </select><br>
+                                <div id = "veutDetails" class = "hidden">
+
+                                    <label for="assurancePNO">Montant annuel de l'assurance PNO <div
+                                    class="fas fa-question-circle element-info" href="#" target=_blank>
+                                    <div class="infobulle">Assurance Propriétaire Non Occupant facultative souscrite par les propriétaires (responsabilité civile, incendie, dégâts des eaux,...) <a target = _blank href="https://www.legalplace.fr/guides/assurance-pno/#Definition_de_lassurance_PNO">Plus d'info</a></div>
+                                    </div></label>
+                                    <input type="number" min=0 name="assurancePNO" placeholder="150" 
+                                    value=<?php if(isset($_SESSION['assurancePNO'])){echo $_SESSION['assurancePNO'];}  ?>>
+                                    €<br>
+
+                                    <label for="assuranceGLI">Montant annuel de l'assurance loyers impayés <div
+                                    class="fas fa-question-circle element-info" href="#" target=_blank>
+                                    <div class="infobulle">Assurance GLI/GRI facultative par les propriétaires protégeant contre les loyers impayés</div>
+                                    </div></label>
+                                    <input type="number" min=0 name="assuranceGLI" placeholder="150" 
+                                    value=<?php if(isset($_SESSION['assuranceGLI'])){echo $_SESSION['assuranceGLI'];}  ?>>
+                                    €<br>
+
+                                    <label for="fraisGestion">Frais de gestion annuelles <div
+                                    class="fas fa-question-circle element-info" href="#" target=_blank>
+                                    <div class="infobulle">Rémunération des gardes, frais de gérance, frais de procédure,... <a href = "https://www.pap.fr/bailleur/impots-taxes/les-revenus-fonciers/a1786/revenus-fonciers-les-frais-et-charges-a-deduire">Plus d'info</a></div>
+                                    </div></label>
+                                    <input type="number" min=0 name="fraisGestion" placeholder="150" 
+                                    value=<?php if(isset($_SESSION['fraisGestion'])){echo $_SESSION['fraisGestion'];}  ?>>
+                                    €<br>
+
+                                    <label for="abonnements">Abonnements et consommations diverses (montant annuel) <span style = "color:red;">(si location meublée)</span> <div
+                                    class="fas fa-question-circle element-info" href="#" target=_blank>
+                                    <div class="infobulle">Facture téléphonique, abonnement internet,... <a href = "https://www.pap.fr/bailleur/impots-taxes/les-revenus-fonciers/a1786/revenus-fonciers-les-frais-et-charges-a-deduire">Plus d'info</a></div>
+                                    </div></label>
+                                    <input type="number" min=0 name="abonnements" placeholder="300" 
+                                    value=<?php if(isset($_SESSION['abonnements'])){echo $_SESSION['abonnements'];}  ?>>
+                                    €<br>
+
+                                    <label for="cfe">Montant annuel de la CFE <span style = "color:red;">(si location meublée)</span> <div
+                                    class="fas fa-question-circle element-info" href="#" target=_blank>
+                                    <div class="infobulle">Cotisation Foncière des Entreprises <a href = "https://www.pap.fr/bailleur/impots-taxes/les-revenus-fonciers/a1786/revenus-fonciers-les-frais-et-charges-a-deduire">Plus d'info</a></div>
+                                    </div></label>
+                                    <input type="number" min=0 name="cfe" placeholder="500" 
+                                    value=<?php if(isset($_SESSION['cfe'])){echo $_SESSION['cfe'];}  ?>>
+                                    €<br>
+
+                                    <label for="autresFrais">Autres frais et charges déductibles annuelles <div
+                                    class="fas fa-question-circle element-info" href="#" target=_blank>
+                                    <div class="infobulle">Liste des charges déductibles : <a href = "">CLIQUEZ ICI</a> </div>
+                                    </div></label>
+                                    <input type="number" min=0 name="autresFrais" placeholder="10" step="any"
+                                    value=<?php if(isset($_SESSION['autresFrais'])){echo ($_SESSION['autresFrais']);}  ?>> €<br>
+
+                                </div>
                             </div>
                             <button type="submit" class="btn btn-warning button" name="simulation">Calculer</button>
                         </form>

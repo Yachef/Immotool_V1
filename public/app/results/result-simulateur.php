@@ -43,7 +43,7 @@
                     <section class = "col-md-3 content-wrapper">
                     </section>
 
-                    <section id = "location-vide" class = "col-md-6 content-wrapper">
+                    <section id = "location-vide" class = "<?php if($_SESSION['mobilier']>0){echo "col-md-6";}else{echo "col-md-12";} ?> content-wrapper">
 
                         <div class = "centerize"><h1>Location Vide</h1></div>
 
@@ -75,7 +75,7 @@
                         </div>
 
                     </section>
-
+                <?php if($_SESSION['mobilier']>0): ?>
                     <section id = "location-meublee" class = "col-md-6 content-wrapper">
 
                         <div class = "centerize"><h1>Location Meubl&eacute;e</h1></div>
@@ -109,6 +109,7 @@
                         </div>
 
                     </section>
+                <?php endif ?>
 
                     <section class ="col-md-12 content-wrapper tableauRecapitulatif">
                         <div class ="content-container">
@@ -118,9 +119,9 @@
                                 <thead>
                                 <tr>
                                     <th class = "centerize" style = "width = 20%;">Année\Régime</th>
-                                    <th class = "centerize" style = "width = 20%;">R&eacute;el</th>
-                                    <th class = "centerize" style = "width = 20%;">LMNP r&eacute;el</th>
-                                    <?php if($_SESSION["LMNPm"]): ?><th class = "centerize" style = "width = 20%;">LMNP Micro Bic</th> <?php endif ?>
+                                    <th class = "centerize" style = "width = 20%;">Réel</th>
+                                    <?php if($_SESSION['mobilier']>0): ?><th class = "centerize" style = "width = 20%;">LMNP réel</th><?php endif ?>
+                                    <?php if($_SESSION["LMNPm"] && $_SESSION['mobilier']>0): ?><th class = "centerize" style = "width = 20%;">LMNP Micro Bic</th> <?php endif ?>
                                     <?php if($_SESSION["microFoncier"]): ?><th class = "centerize" style = "width = 20%;">Micro Foncier</th> <?php endif ?>
                                 </tr>
                                 </thead>
@@ -132,11 +133,15 @@
                                             echo "<tr>";
                                             echo "<td>".($i+1)."</td>";
                                             echo "<td class =". colorNumber($_SESSION['tabcashflowR'][$i]).">".round($_SESSION['tabcashflowR'][$i],2)."€"."</td>";
+                                            if($_SESSION['mobilier']>0){
                                             echo "<td class =". colorNumber($_SESSION['tabcashflowBIC'][$i]).">".round($_SESSION['tabcashflowBIC'][$i],2)."€"."</td>";
-                                            if($_SESSION["LMNPm"]){
+                                            }
+                                            if($_SESSION["LMNPm"] && $_SESSION['mobilier']>0){
                                                 echo "<td class =". colorNumber($_SESSION['tabcashflowLMNPm'][$i]).">".round($_SESSION['tabcashflowLMNPm'][$i],2)."€"."</td>";
                                             }else{
+                                                if($_SESSION['mobilier']>0){
                                                 echo "<td></td>";
+                                                }
                                             }
                                             if($_SESSION['microFoncier']){
                                                 echo "<td class =". colorNumber($_SESSION['tabcashflowmF'][$i]).">".round($_SESSION['tabcashflowmF'][$i],2)."€"."</td>";

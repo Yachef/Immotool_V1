@@ -102,7 +102,6 @@ function saveData(){
   $_SESSION['prix'] = $_POST['prix'];
   $_SESSION['travaux'] = $_POST['travaux'];
   $_SESSION['fraisNotaire'] = $_POST["fraisNotaire"];
-  $_SESSION['fraisDossiers'] = $_POST['fraisDossiers'];
   if(!empty($_POST['mobilier'])){
   $_SESSION['mobilier'] = $_POST['mobilier'];
   }
@@ -110,11 +109,18 @@ function saveData(){
   $_SESSION['apport'] = $_POST['apport'];
   $_SESSION['questionEmprunt'] = $_POST['questionEmprunt'];
   if($_SESSION['questionEmprunt'] == "oui"){
-    $_SESSION['assuranceCredit'] = $_POST['assuranceCredit']/100;
+    if(!empty($_POST['assuranceCredit'])){
+      $_SESSION['assuranceCredit'] = $_POST['assuranceCredit']/100;
+    }
+    $_SESSION['fraisDossiers'] = $_POST['fraisDossiers'];
     $_SESSION['taux'] = $_POST['taux']/100;
     $_SESSION['dureeEmprunt'] = $_POST['dureeEmprunt'];
   }
+
   $_SESSION['revenus'] = $_POST['revenus'];
+  $_SESSION['situationMaritale'] = $_POST['situationMaritale'];
+  $_SESSION['personnesCharge'] = $_POST['personnesCharge'];
+
   $_SESSION['loyer'] = $_POST['loyer'];
   $_SESSION['vacances'] = $_POST['vacances']/100;
   $_SESSION['autresRecettes']= $_POST['autresRecettes'];
@@ -123,8 +129,28 @@ function saveData(){
   $_SESSION['reparations'] = $_POST['reparations'];
   $_SESSION['chargesCopro'] = $_POST['chargesCopro'];
 
-  $_SESSION['situationMaritale'] = $_POST['situationMaritale'];
-  $_SESSION['personnesCharge'] = $_POST['personnesCharge'];
+  $_SESSION['voirDetails'] = $_POST['voirDetails'];
+  if($_SESSION['voirDetails'] == "oui"){
+    if(!empty($_POST['assurancePNO'])){
+    $_SESSION['assurancePNO'] = $_POST['assurancePNO'];
+    }
+    if(!empty($_POST['assuranceGLI'])){
+    $_SESSION['assuranceGLI'] = $_POST['assuranceGLI'];
+    }
+    if(!empty($_POST['abonnements'])){
+    $_SESSION['abonnements'] = $_POST['abonnements'];
+    }
+    if(!empty($_POST['cfe'])){
+    $_SESSION['cfe'] = $_POST['cfe'];
+    }
+    if(!empty($_POST['autresFrais'])){
+    $_SESSION['autresFrais'] = $_POST['autresFrais'];
+    }
+    if(!empty($_POST['fraisGestion'])){
+    $_SESSION['fraisGestion'] = $_POST['fraisGestion'];
+    }
+  }
+
 };
 function resetData(){
   unset($_SESSION['prix']);
@@ -150,12 +176,18 @@ function resetData(){
 
   unset($_SESSION['situationMaritale']);
   unset($_SESSION['personnesCharge']);
-  
+
+  unset($_SESSION['assurancePNO']); 
+  unset($_SESSION['fraisGestion']); 
+  unset($_SESSION['assuranceGLI']); 
+  unset($_SESSION['abonnements']);
+  unset($_SESSION['cfe']);
+  unset($_SESSION['autresFrais']);
 }
 function connectToDB(){
   try{
-    $GLOBALS["db"] = mysqli_connect('localhost', 'yachef', 'yacleboss', 'calculermoncashflow',3306);
-    // $GLOBALS["db"] = mysqli_connect("db5000036975.hosting-data.io","dbu73555","F8ma9surnz2y!","dbs31976",3306);
+    // $GLOBALS["db"] = mysqli_connect('localhost', 'yachef', 'yacleboss', 'calculermoncashflow',3306);
+    $GLOBALS["db"] = mysqli_connect("db5000036975.hosting-data.io","dbu73555","F8ma9surnz2y!","dbs31976",3306);
   }
   catch(Exception $e){
     echo "Problème de connexion à la DB :".$e;
@@ -311,7 +343,11 @@ function tabImpotsFonciersR($travaux,$revenus,$chargesAnnuelles,$tabInteretEmpru
   $deficitFoncier = 0;
   for($i = 0;$i<30;$i++){
     $travaux = ($i == 0) ? $travaux : 0;
+    if($i == 0){
+    $recettesMoinsCharges[$i] = $totalRecettesAnnuelles -  $tabInteretEmprunt[$i] - $chargesAnnuelles - $_SESSION['fraisNotaire'] - $travaux - $deficitFoncier;
+    }else{
     $recettesMoinsCharges[$i] = $totalRecettesAnnuelles -  $tabInteretEmprunt[$i] - $chargesAnnuelles - $travaux - $deficitFoncier;
+    }
     if($recettesMoinsCharges[$i] >= 0){
       $revenusFonciersImposables[$i] = $recettesMoinsCharges[$i];
       $revenuGlobal[$i] = $revenusFonciersImposables[$i] + 0.9 * $revenus; 
@@ -343,7 +379,11 @@ function tabImpotsFonciersBIC($mobilier,$prixAchat,$travaux,$fraisNotaire,$reven
   $chargesAmortissement = tabAmortissement($mobilier,$prixAchat,$travaux,$fraisNotaire);
   $deficitFoncier = 0;
   for($i = 0;$i<30;$i++){
+    if($i == 0){
+      $recettesMoinsCharges[$i] = recettesMoinsCharges($totalRecettesAnnuelles,$tabInteretEmprunt[$i],$chargesAnnuelles +$_SESSION['fraisNotaire'],$chargesAmortissement[$i],$deficitFoncier);
+    }else{
     $recettesMoinsCharges[$i] = recettesMoinsCharges($totalRecettesAnnuelles,$tabInteretEmprunt[$i],$chargesAnnuelles,$chargesAmortissement[$i],$deficitFoncier);
+    }
     if($recettesMoinsCharges[$i] >= 0){
       $revenusFonciersImposables[$i] = $recettesMoinsCharges[$i];
       $revenuGlobal[$i] = $revenusFonciersImposables[$i] + 0.9 * $revenus; 
@@ -406,21 +446,60 @@ function genererChaineAleatoire($longueur){
 }
 
 function gestionErreurSaisie($post){
+  if($_POST['questionEmprunt'] =="non"){
+    $_POST['taux'] = 0;
+    $_POST['dureeEmprunt'] = 0;
+    $_POST['fraisDossiers'] = 0;
+    $_POST['assuranceCredit'] = 0;
+  }
+
+  if($_POST['voirDetails'] =="non"){
+    $_POST['assurancePNO'] = 0;
+    $_POST['assuranceGLI'] = 0;
+    $_POST['fraisGestion'] = 0;
+    $_POST['abonnements'] = 0;
+    $_POST['cfe'] = 0;
+  }
   $final_message = array();
 
   if($_POST['dureeEmprunt']> 30){
     $message = "Durée d'emprunt invalide";
     array_push($final_message, $message);
   }
+
   if(empty($_POST['mobilier'])){
   $_SESSION['mobilier'] = 0;
   }
+
+  if(empty($_POST['assuranceCredit'])){
+  $_SESSION['assuranceCredit'] = 0;
+  }
+  if(empty($_POST['abonnements'])){
+  $_SESSION['abonnements'] = 0;
+  }
+  if(empty($_POST['assurancePNO'])){
+  $_SESSION['assurancePNO'] = 0;
+  }
+
+  if(empty($_POST['assuranceGLI'])){
+  $_SESSION['assuranceGLI'] = 0;
+  }
+
+  if(empty($_POST['cfe'])){
+  $_SESSION['cfe'] = 0;
+  }
+
+  if(empty($_POST['autresFrais'])){
+  $_SESSION['autresFrais'] = 0;
+  }
+
   $totalCoutAchat = $_POST['prix'] + $_POST['travaux'] + $_POST['fraisDossiers'] + $_POST['mobilier'] + $_POST['fraisNotaire'];
   if($_POST['apport'] != $totalCoutAchat && $_POST["taux"] == 0){
     $apport = $_POST['apport']; 
-    $message = "L'apport personnel ( $apport € ) n'est pas égale au côut total d'achat ( $totalCoutAchat € ), vous avez donc fait un crédit. Veuillez modifier le taux d'intérêt annuel'.";
+    $message = "L'apport personnel ( $apport € ) n'est pas égale au côut total d'achat ( $totalCoutAchat € ), vous devez donc faire un crédit. Veuillez insérer les informations du crédit, ou modifier votre apport personnel ";
     array_push($final_message, $message);
   }
+
   return $final_message;
 }
 ?>

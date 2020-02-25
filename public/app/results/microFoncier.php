@@ -1,4 +1,4 @@
-<?php require_once('../../../erver/server.php');?>
+<?php require_once('../../../server/server.php');?>
 <!DOCTYPE html>
 <html>
 <head>

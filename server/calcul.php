@@ -26,8 +26,9 @@ function calcul(){
   
     // CHARGES DEDUCTIBLES
     $_SESSION['montantAssuranceCredit'] = $_SESSION['montantPret'] * $_SESSION['assuranceCredit'];
-    $_SESSION['totalChargesAnnuelles'] = $_SESSION['taxeFonciere'] + $_SESSION['montantAssuranceCredit'] + $_SESSION['reparations'] + $_SESSION['chargesCopro'];
-  
+    $_SESSION['totalChargesAnnuelles'] = $_SESSION['taxeFonciere'] + $_SESSION['montantAssuranceCredit'] + $_SESSION['reparations'] + $_SESSION['chargesCopro'] + $_SESSION['autresFrais'] + $_SESSION['fraisGestion'] + $_SESSION['assurancePNO'] + $_SESSION['assuranceGLI'];
+    $_SESSION['chargesAnnuellesMeuble'] = $_SESSION['totalChargesAnnuelles'] + $_SESSION["abonnements"] + $_SESSION['cfe'];
+
   
     // ROI
     $_SESSION['rendementBrut'] = $_SESSION['totalRecettesAnuelles']/$_SESSION['totalCoutAchat'];
@@ -39,8 +40,10 @@ function calcul(){
     reel();
 
     //LMNP
-    microBic();
-    reel_LMNP();
+    if($_SESSION['mobilier']>0){
+      microBic();
+      reel_LMNP();
+    }
   
 }
 // LOCATION NUE
@@ -83,23 +86,23 @@ function microBic(){
     $_SESSION['newTMILMNPm'] = TMI($_SESSION['revenuGlobalLMNPm']);
     $_SESSION['tabImpotsFonciersLMNPm'] = tabImpotsFonciers($_SESSION['revenusFonciersImposablesLMNPm'],$_SESSION['revenuGlobalLMNPm'],$_SESSION['personnesCharge'],$_SESSION['situationMaritale']);
     $_SESSION['impotsFoncierLMNPm'] = $_SESSION['tabImpotsFonciersLMNPm'][0];
-    $_SESSION['regimeMicroBic'] =( $_SESSION['totalRecettesAnuelles'] - $_SESSION['totalChargesAnnuelles'] - $_SESSION['impotsFoncierLMNPm'] ) / $_SESSION['totalCoutAchat'];
-    $_SESSION['tabcashflowLMNPm'] = cashFlow($_SESSION['totalRecettesAnuelles'],$_SESSION['mensualitesTotales'],$_SESSION['totalChargesAnnuelles'],$_SESSION['tabImpotsFonciersLMNPm']);
+    $_SESSION['regimeMicroBic'] =( $_SESSION['totalRecettesAnuelles'] - $_SESSION['chargesAnnuellesMeuble'] - $_SESSION['impotsFoncierLMNPm'] ) / $_SESSION['totalCoutAchat'];
+    $_SESSION['tabcashflowLMNPm'] = cashFlow($_SESSION['totalRecettesAnuelles'],$_SESSION['mensualitesTotales'],$_SESSION['chargesAnnuellesMeuble'],$_SESSION['tabImpotsFonciersLMNPm']);
     $_SESSION['cashflowLMNPm'] = $_SESSION['tabcashflowLMNPm'][0];
-    $_SESSION['tabRendementNetNetLMNPm'] = tabRendementNetNet($_SESSION['totalRecettesAnuelles'],$_SESSION['totalChargesAnnuelles'],$_SESSION['totalCoutAchat'],$_SESSION['tabImpotsFonciersLMNPm']);
+    $_SESSION['tabRendementNetNetLMNPm'] = tabRendementNetNet($_SESSION['totalRecettesAnuelles'],$_SESSION['chargesAnnuellesMeuble'],$_SESSION['totalCoutAchat'],$_SESSION['tabImpotsFonciersLMNPm']);
     $_SESSION['rendementNetNetLMNPm'] = $_SESSION["tabRendementNetNetLMNPm"][0];
 
   }
 }
 
 function reel_LMNP(){
-    $_SESSION['tabimpotsFoncierBIC'] = tabimpotsFonciersBIC($_SESSION['mobilier'],$_SESSION['prix'],$_SESSION['travaux'],$_SESSION['fraisNotaire'],$_SESSION['revenus'],$_SESSION['totalChargesAnnuelles'],$_SESSION['tabInteretEmprunt'],$_SESSION['totalRecettesAnuelles'],$_SESSION['personnesCharge'],$_SESSION['situationMaritale']);
+    $_SESSION['tabimpotsFoncierBIC'] = tabimpotsFonciersBIC($_SESSION['mobilier'],$_SESSION['prix'],$_SESSION['travaux'],$_SESSION['fraisNotaire'],$_SESSION['revenus'],$_SESSION['chargesAnnuellesMeuble'],$_SESSION['tabInteretEmprunt'],$_SESSION['totalRecettesAnuelles'],$_SESSION['personnesCharge'],$_SESSION['situationMaritale']);
     $_SESSION['impotsFoncierBIC'] = $_SESSION['tabimpotsFoncierBIC'][0];
     $_SESSION['tabAmortissement'] = tabAmortissement($_SESSION['mobilier'],$_SESSION['prix'],$_SESSION['travaux'],$_SESSION['fraisNotaire']);
-    $_SESSION['regimeBIC'] = ( $_SESSION['totalRecettesAnuelles'] - $_SESSION['totalChargesAnnuelles'] - $_SESSION['impotsFoncierBIC'] ) / $_SESSION['totalCoutAchat'];
-    $_SESSION['tabcashflowBIC'] = cashFlow($_SESSION['totalRecettesAnuelles'],$_SESSION['mensualitesTotales'],$_SESSION['totalChargesAnnuelles'],$_SESSION['tabimpotsFoncierBIC']);
+    $_SESSION['regimeBIC'] = ( $_SESSION['totalRecettesAnuelles'] - $_SESSION['chargesAnnuellesMeuble'] - $_SESSION['impotsFoncierBIC'] ) / $_SESSION['totalCoutAchat'];
+    $_SESSION['tabcashflowBIC'] = cashFlow($_SESSION['totalRecettesAnuelles'],$_SESSION['mensualitesTotales'],$_SESSION['chargesAnnuellesMeuble'],$_SESSION['tabimpotsFoncierBIC']);
     $_SESSION['cashflowBIC'] = $_SESSION['tabcashflowBIC'][0];
-    $_SESSION['tabRendementNetNetBIC'] = tabRendementNetNet($_SESSION['totalRecettesAnuelles'],$_SESSION['totalChargesAnnuelles'],$_SESSION['totalCoutAchat'],$_SESSION['tabimpotsFoncierBIC']);
+    $_SESSION['tabRendementNetNetBIC'] = tabRendementNetNet($_SESSION['totalRecettesAnuelles'],$_SESSION['chargesAnnuellesMeuble'],$_SESSION['totalCoutAchat'],$_SESSION['tabimpotsFoncierBIC']);
     $_SESSION['rendementNetNetBIC'] = $_SESSION["tabRendementNetNetBIC"][0];
 
 }
